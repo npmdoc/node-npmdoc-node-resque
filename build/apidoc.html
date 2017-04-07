@@ -1,0 +1,5150 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/taskrabbit/node-resque"
+
+    >node-resque (v4.0.5)</a>
+</h1>
+<h4>an opinionated implementation of resque in node</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque">module node-resque</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection">
+            function <span class="apidocSignatureSpan">node-resque.</span>connection
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker">
+            function <span class="apidocSignatureSpan">node-resque.</span>multiWorker
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue">
+            function <span class="apidocSignatureSpan">node-resque.</span>queue
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler">
+            function <span class="apidocSignatureSpan">node-resque.</span>scheduler
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker">
+            function <span class="apidocSignatureSpan">node-resque.</span>worker
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>connection.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>multiWorker.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>pluginRunner</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>queue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>scheduler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>worker.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.connection">module node-resque.connection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.connection">
+            function <span class="apidocSignatureSpan">node-resque.</span>connection
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.super_">
+            function <span class="apidocSignatureSpan">node-resque.connection.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.connection.prototype">module node-resque.connection.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.prototype.connect">
+            function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.prototype.defaults">
+            function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.prototype.end">
+            function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.prototype.key">
+            function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>key
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.multiWorker">module node-resque.multiWorker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.multiWorker">
+            function <span class="apidocSignatureSpan">node-resque.</span>multiWorker
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.super_">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.multiWorker.prototype">module node-resque.multiWorker.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.checkWorkers">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>checkWorkers
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.checkWraper">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>checkWraper
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.cleanupWorker">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>cleanupWorker
+            <span class="apidocSignatureSpan">(worker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.defaults">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.end">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>end
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.start">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>start
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.startWorker">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>startWorker
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.stop">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>stop
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.stopWait">
+            function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>stopWait
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.pluginRunner">module node-resque.pluginRunner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.pluginRunner.runPlugin">
+            function <span class="apidocSignatureSpan">node-resque.pluginRunner.</span>runPlugin
+            <span class="apidocSignatureSpan">(self, pluginRefrence, type, func, queue, job, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.pluginRunner.runPlugins">
+            function <span class="apidocSignatureSpan">node-resque.pluginRunner.</span>runPlugins
+            <span class="apidocSignatureSpan">(self, type, func, queue, job, args, callback, pluginCounter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.queue">module node-resque.queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.queue">
+            function <span class="apidocSignatureSpan">node-resque.</span>queue
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.super_">
+            function <span class="apidocSignatureSpan">node-resque.queue.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.queue.prototype">module node-resque.queue.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.allDelayed">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>allDelayed
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.allWorkingOn">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>allWorkingOn
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.cleanOldWorkers">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>cleanOldWorkers
+            <span class="apidocSignatureSpan">(age, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.connect">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.del">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>del
+            <span class="apidocSignatureSpan">(q, func, args, count, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.delDelayed">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delDelayed
+            <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.delLock">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delLock
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.delQueue">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delQueue
+            <span class="apidocSignatureSpan">(q, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.delayedAt">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delayedAt
+            <span class="apidocSignatureSpan">(timestamp, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.encode">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>encode
+            <span class="apidocSignatureSpan">(q, func, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.end">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>end
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.enqueue">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueue
+            <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.enqueueAt">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueueAt
+            <span class="apidocSignatureSpan">(timestamp, q, func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.enqueueIn">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueueIn
+            <span class="apidocSignatureSpan">(time, q, func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.failed">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>failed
+            <span class="apidocSignatureSpan">(start, stop, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.failedCount">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>failedCount
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.forceCleanWorker">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>forceCleanWorker
+            <span class="apidocSignatureSpan">(workerName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.length">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>length
+            <span class="apidocSignatureSpan">(q, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.locks">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>locks
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.queued">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>queued
+            <span class="apidocSignatureSpan">(q, start, stop, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.queues">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>queues
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.removeFailed">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>removeFailed
+            <span class="apidocSignatureSpan">(failedJob, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.retryAndRemoveFailed">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>retryAndRemoveFailed
+            <span class="apidocSignatureSpan">(failedJob, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.scheduledAt">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>scheduledAt
+            <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.stats">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>stats
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.timestamps">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>timestamps
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.workers">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>workers
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.workingOn">
+            function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>workingOn
+            <span class="apidocSignatureSpan">(workerName, queues, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.scheduler">module node-resque.scheduler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.scheduler">
+            function <span class="apidocSignatureSpan">node-resque.</span>scheduler
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.super_">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.scheduler.prototype">module node-resque.scheduler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.cleanupTimestamp">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>cleanupTimestamp
+            <span class="apidocSignatureSpan">(timestamp, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.connect">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.defaults">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.end">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>end
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.enqueueDelayedItemsForTimestamp">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>enqueueDelayedItemsForTimestamp
+            <span class="apidocSignatureSpan">(timestamp, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.masterKey">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>masterKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.nextDelayedTimestamp">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>nextDelayedTimestamp
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.nextItemForTimestamp">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>nextItemForTimestamp
+            <span class="apidocSignatureSpan">(timestamp, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.poll">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>poll
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.pollAgainLater">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>pollAgainLater
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.releaseMasterLock">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>releaseMasterLock
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.start">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.transfer">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>transfer
+            <span class="apidocSignatureSpan">(timestamp, job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.scheduler.prototype.tryForMaster">
+            function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>tryForMaster
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.worker">module node-resque.worker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.worker">
+            function <span class="apidocSignatureSpan">node-resque.</span>worker
+            <span class="apidocSignatureSpan">(options, jobs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.super_">
+            function <span class="apidocSignatureSpan">node-resque.worker.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.worker.prototype">module node-resque.worker.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.checkQueues">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>checkQueues
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.completeJob">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>completeJob
+            <span class="apidocSignatureSpan">(toRespond, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.connect">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.defaults">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.doneWorking">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>doneWorking
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.end">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>end
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.fail">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>fail
+            <span class="apidocSignatureSpan">(err, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.failurePayload">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>failurePayload
+            <span class="apidocSignatureSpan">(err, job)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.getPids">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>getPids
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.init">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>init
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.pause">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.perform">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>perform
+            <span class="apidocSignatureSpan">(job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.performInline">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>performInline
+            <span class="apidocSignatureSpan">(func, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.poll">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>poll
+            <span class="apidocSignatureSpan">(nQueue, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.start">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.stringQueues">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>stringQueues
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.succeed">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>succeed
+            <span class="apidocSignatureSpan">(job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.track">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>track
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.untrack">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>untrack
+            <span class="apidocSignatureSpan">(name, queues, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.workerCleanup">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>workerCleanup
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.worker.prototype.workingOn">
+            function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>workingOn
+            <span class="apidocSignatureSpan">(job)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque" id="apidoc.module.node-resque">module node-resque</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection" id="apidoc.element.node-resque.connection">
+        function <span class="apidocSignatureSpan">node-resque.</span>connection
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connection = function (options){
+  var self = this;
+  var defaults = self.defaults();
+
+  if(!options){ options = {}; }
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+  self.options = options;
+  self.listeners = {};
+  self.connected = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker" id="apidoc.element.node-resque.multiWorker">
+        function <span class="apidocSignatureSpan">node-resque.</span>multiWorker
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiWorker = function (options, jobs){
+  var self = this;
+
+  var defaults = self.defaults();
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+
+  if(options.connection.redis &#x26;&#x26; typeof options.connection.redis.setMaxListeners === &#x27;function&#x27;){
+    options.connection.redis.setMaxListeners(options.connection.redis.getMaxListeners() + options.maxTaskProcessors);
+  }
+
+  self.workers = [];
+  self.options = options;
+  self.jobs = jobs;
+  self.running = false;
+  self.working = false;
+  self.name = self.options.name;
+  self.eventLoopBlocked = true;
+  self.eventLoopDelay = Infinity;
+  self.eventLoopCheckCounter = 0;
+
+  eventLoopDelay(
+    self.options.maxEventLoopDelay,
+    self.options.checkTimeout,
+  function(blocked, ms){
+    self.eventLoopBlocked = blocked;
+    self.eventLoopDelay = ms;
+    self.eventLoopCheckCounter++;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var connectionDetails = {
+pkg:       &#x22;ioredis&#x22;,
+host:      &#x22;127.0.0.1&#x22;,
+password:  &#x22;&#x22;
+}
+
+var multiWorker = new NR.<span class="apidocCodeKeywordSpan">multiWorker</span>({
+connection: connectionDetails,
+queues: [&#x27;slowQueue&#x27;],
+minTaskProcessors:   1,
+maxTaskProcessors:   100,
+checkTimeout:        1000,
+maxEventLoopDelay:   10,
+toDisconnectProcessors: true,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue" id="apidoc.element.node-resque.queue">
+        function <span class="apidocSignatureSpan">node-resque.</span>queue
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queue = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+
+  self.options = options;
+  self.jobs    = jobs;
+
+  self.connection = new connection(options.connection);
+
+  self.connection.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+scheduler.on(&#x27;working_timestamp&#x27;, function(timestamp){ console.log(&#x22;scheduler working timestamp &#x22; + timestamp
+); });
+scheduler.on(&#x27;transferred_job&#x27;,   function(timestamp, job){ console.log(&#x22;scheduler enquing job &#x22; + timestamp
+ + &#x22; &#x3e;&#x3e; &#x22; + JSON.stringify(job)); });
+
+////////////////////////
+// CONNECT TO A QUEUE //
+////////////////////////
+
+var queue = new NR.<span class="apidocCodeKeywordSpan">queue</span>({connection: connectionDetails}, jobs);
+queue.on(&#x27;error&#x27;, function(error){ console.log(error); });
+queue.connect(function(){
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [2,3]);
+  queue.enqueueIn(3000, &#x27;math&#x27;, &#x22;subtract&#x22;, [2,1]);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler" id="apidoc.element.node-resque.scheduler">
+        function <span class="apidocSignatureSpan">node-resque.</span>scheduler
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scheduler = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+  var defaults = self.defaults();
+
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+
+  self.options    = options;
+  self.name       = self.options.name;
+  self.master     = false;
+  self.running    = false;
+  self.processing = false;
+
+  self.queue = new queue({connection: options.connection}, jobs);
+
+  self.queue.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+
+var scheduler = new NR.<span class="apidocCodeKeywordSpan">scheduler</span>({connection: connectionDetails});
+scheduler.connect(function(){
+  scheduler.start();
+});
+
+/////////////////////////
+// REGESTER FOR EVENTS //
+/////////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker" id="apidoc.element.node-resque.worker">
+        function <span class="apidocSignatureSpan">node-resque.</span>worker
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">worker = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+
+  var defaults = self.defaults();
+  for(var i in defaults){
+    if(options[i] === undefined || options[i] === null){
+      options[i] = defaults[i];
+    }
+  }
+
+  self.options = options;
+  self.jobs = prepareJobs(jobs);
+  self.name = self.options.name;
+  self.queues = self.options.queues;
+  self.error = null;
+  self.result = null;
+  self.ready = false;
+  self.running = false;
+  self.working = false;
+  self.job = null;
+
+  self.queueObject = new queue({connection: options.connection}, self.jobs);
+
+  self.queueObject.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, null, null, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.<span class="apidocCodeKeywordSpan">worker</span>({connection: connectionDetails, queues: [&#x27;math&#x27;, &#
+x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.connection" id="apidoc.module.node-resque.connection">module node-resque.connection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.connection" id="apidoc.element.node-resque.connection.connection">
+        function <span class="apidocSignatureSpan">node-resque.</span>connection
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connection = function (options){
+  var self = this;
+  var defaults = self.defaults();
+
+  if(!options){ options = {}; }
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+  self.options = options;
+  self.listeners = {};
+  self.connected = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.super_" id="apidoc.element.node-resque.connection.super_">
+        function <span class="apidocSignatureSpan">node-resque.connection.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.connection.prototype" id="apidoc.module.node-resque.connection.prototype">module node-resque.connection.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.prototype.connect" id="apidoc.element.node-resque.connection.prototype.connect">
+        function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback){
+  var self = this;
+
+  if(self.options.redis){
+    var jobs = [];
+    self.redis = self.options.redis;
+
+    jobs.push(function(done){
+      self.redis.set(self.key(&#x27;connection_test_key&#x27;), &#x27;true&#x27;, done);
+    });
+
+    jobs.push(function(done){
+      self.redis.get(self.key(&#x27;connection_test_key&#x27;), function(error, data){
+        if(!error &#x26;&#x26; data !== &#x27;true&#x27;){ error = new Error(&#x27;cannot read connection test key&#x27;); }
+        if(error){
+          self.connected = false;
+          self.emit(&#x27;error&#x27;, error);
+          return done(error);
+        }
+        self.connected = true;
+        done();
+      });
+    });
+
+    async.series(jobs, callback);
+  }else{
+
+    if(self.options[&#x27;package&#x27;] &#x26;&#x26; !self.options.pkg){
+      self.emit(&#x27;Depreciation warning: You need to use \&#x27;pkg\&#x27; instead of \&#x27;package\&#x27;! Please update your configuration.&#x27;);
+      self.options.pkg = self.options[&#x27;package&#x27;];
+    }
+    var pkg = require(self.options.pkg);
+    self.redis = pkg.createClient(self.options.port, self.options.host, self.options.options);
+
+    self.listeners.connect = function(){
+      if(self.connected === true){
+        // nothing to do here; this is a reconnect
+      }else{
+        self.redis.select(self.options.database, function(error){
+          if(error){
+            self.connected = false;
+            self.emit(&#x27;error&#x27;, error);
+            return callback(error);
+          }else{
+            self.connected = true;
+            return callback();
+          }
+        });
+      }
+    };
+
+    self.redis.on(&#x27;connect&#x27;, self.listeners.connect);
+    if(self.options.pkg === &#x27;fakeredis&#x27;){ process.nextTick(self.listeners.connect); }
+  }
+
+  self.listeners.error = function(error){ self.emit(&#x27;error&#x27;, error); };
+  self.redis.on(&#x27;error&#x27;, self.listeners.error);
+
+  self.listeners.end = function(){ self.connected = false; };
+  self.redis.on(&#x27;end&#x27;, self.listeners.end);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.<span class="apidocCodeKeywordSpan">connect</span>(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.prototype.defaults" id="apidoc.element.node-resque.connection.prototype.defaults">
+        function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (){
+  return {
+    pkg:       &#x27;ioredis&#x27;,
+    host:      &#x27;127.0.0.1&#x27;,
+    port:      6379,
+    database:  0,
+    namespace: &#x27;resque&#x27;,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var util  = require(&#x27;util&#x27;);
+var async = require(&#x27;async&#x27;);
+var EventEmitter = require(&#x27;events&#x27;).EventEmitter;
+
+var connection = function(options){
+var self = this;
+var defaults = self.<span class="apidocCodeKeywordSpan">defaults</span>();
+
+if(!options){ options = {}; }
+for(var i in defaults){
+  if(options[i] === null || options[i] === undefined){
+    options[i] = defaults[i];
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.prototype.end" id="apidoc.element.node-resque.connection.prototype.end">
+        function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (){
+  var self = this;
+  self.connected = false;
+
+  Object.keys(self.listeners).forEach(function(eventName){
+    self.redis.removeListener(eventName, self.listeners[eventName]);
+  });
+
+  // Only disconnect if we established the redis connection on our own.
+  if(!self.options.redis &#x26;&#x26; self.options.pkg !== &#x27;fakeredis&#x27;){
+    if(typeof self.redis.disconnect === &#x27;function&#x27;){ self.redis.disconnect(); }
+    else{ self.redis.quit(); }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+worker.connect(function(){
+  worker.start();
+});
+```
+
+## Notes
+- Be sure to call `worker.<span class="apidocCodeKeywordSpan">end</span>(callback)`, `queue.end(callback)` and `scheduler.end(callback
+)` before shutting down your application if you want to properly clear your worker status from resque
+- When ending your application, be sure to allow your workers time to finish what they are working on
+- This project implements the &#x22;scheduler&#x22; part of rescue-scheduler (the daemon which can promote enqueued delayed jobs
+ into the work queues when it is time), but not the CRON scheduler proxy.  To learn more about how to use a CRON-like scheduler,
+read the [Job Schedules](#job-schedules) section of this document.
+- If you are using any plugins which effect `beforeEnqueue` or `afterEnqueue`, be sure to pass the `jobs` argument to the `new Queue
+` constructor
+- If a job fails, it will be added to a special `failed` queue.  You can then inspect these jobs, write a plugin to manage them,
+move them back to the normal queues, etc.  Failure behavior by default is just to enter the `failed` queue, but there are many options
+.  Check out these examples from the ruby ecosystem for inspiration:
+  - https://github.com/lantins/resque-retry
+  - https://github.com/resque/resque/wiki/Failure-Backends
+- If you plan to run more than one worker per nodejs process, be sure to name them something distinct.  Names **must** follow the
+ pattern `hostname:pid+unique_id`.  For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.connection.prototype.key" id="apidoc.element.node-resque.connection.prototype.key">
+        function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>key
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">key = function (){
+  var args;
+  args = (arguments.length &#x3e;= 1 ? [].slice.call(arguments, 0) : []);
+  args.unshift(this.options.namespace);
+  return args.join(&#x27;:&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var self = this;
+
+  if(self.options.redis){
+var jobs = [];
+self.redis = self.options.redis;
+
+jobs.push(function(done){
+  self.redis.set(self.<span class="apidocCodeKeywordSpan">key</span>(&#x27;connection_test_key&#x27;), &#x27;true&#x27;, done);
+});
+
+jobs.push(function(done){
+  self.redis.get(self.key(&#x27;connection_test_key&#x27;), function(error, data){
+    if(!error &#x26;&#x26; data !== &#x27;true&#x27;){ error = new Error(&#x27;cannot read connection test key&#x27;); }
+    if(error){
+      self.connected = false;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.multiWorker" id="apidoc.module.node-resque.multiWorker">module node-resque.multiWorker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.multiWorker" id="apidoc.element.node-resque.multiWorker.multiWorker">
+        function <span class="apidocSignatureSpan">node-resque.</span>multiWorker
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">multiWorker = function (options, jobs){
+  var self = this;
+
+  var defaults = self.defaults();
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+
+  if(options.connection.redis &#x26;&#x26; typeof options.connection.redis.setMaxListeners === &#x27;function&#x27;){
+    options.connection.redis.setMaxListeners(options.connection.redis.getMaxListeners() + options.maxTaskProcessors);
+  }
+
+  self.workers = [];
+  self.options = options;
+  self.jobs = jobs;
+  self.running = false;
+  self.working = false;
+  self.name = self.options.name;
+  self.eventLoopBlocked = true;
+  self.eventLoopDelay = Infinity;
+  self.eventLoopCheckCounter = 0;
+
+  eventLoopDelay(
+    self.options.maxEventLoopDelay,
+    self.options.checkTimeout,
+  function(blocked, ms){
+    self.eventLoopBlocked = blocked;
+    self.eventLoopDelay = ms;
+    self.eventLoopCheckCounter++;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var connectionDetails = {
+pkg:       &#x22;ioredis&#x22;,
+host:      &#x22;127.0.0.1&#x22;,
+password:  &#x22;&#x22;
+}
+
+var multiWorker = new NR.<span class="apidocCodeKeywordSpan">multiWorker</span>({
+connection: connectionDetails,
+queues: [&#x27;slowQueue&#x27;],
+minTaskProcessors:   1,
+maxTaskProcessors:   100,
+checkTimeout:        1000,
+maxEventLoopDelay:   10,
+toDisconnectProcessors: true,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.super_" id="apidoc.element.node-resque.multiWorker.super_">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.multiWorker.prototype" id="apidoc.module.node-resque.multiWorker.prototype">module node-resque.multiWorker.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.checkWorkers" id="apidoc.element.node-resque.multiWorker.prototype.checkWorkers">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>checkWorkers
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkWorkers = function (callback){
+  var self = this;
+  var verb;
+  var workingCount = 0;
+
+  setImmediate(function(){
+
+    self.workers.forEach(function(worker){
+      if(worker.working === true){ workingCount++; }
+    });
+
+    if(workingCount &#x3e; 0){
+      self.working = true;
+    }else{
+      self.working = false;
+    }
+
+    if(self.running === false &#x26;&#x26; self.workers.length &#x3e; 0){                                     verb = &#x27;--&#x27;; }
+    else if(self.running === false &#x26;&#x26; self.workers.length === 0){                              verb = &#x27;x&#x27;;  }
+    else if(self.eventLoopBlocked  &#x26;&#x26; self.workers.length &#x3e; self.options.minTaskProcessors){   verb = &#x27;-&#x27;;  }
+    else if(self.eventLoopBlocked  &#x26;&#x26; self.workers.length === self.options.minTaskProcessors){ verb = &#x27;x&#x27;;  }
+    else if(!self.eventLoopBlocked &#x26;&#x26; self.workers.length &#x3c; self.options.minTaskProcessors){   verb = &#x27;+&#x27;;  }
+    else if(
+      !self.eventLoopBlocked &#x26;&#x26;
+      self.workers.length &#x3c; self.options.maxTaskProcessors &#x26;&#x26;
+      (
+        self.workers.length === 0 ||
+        workingCount / self.workers.length &#x3e; 0.5
+      )
+    ){ verb = &#x27;+&#x27;; }
+    else if(
+      !self.eventLoopBlocked &#x26;&#x26;
+      self.workers.length &#x3e; self.options.minTaskProcessors &#x26;&#x26;
+      workingCount / self.workers.length &#x3c; 0.5
+    ){
+      verb = &#x27;-&#x27;;
+    }
+    else{ verb = &#x27;x&#x27;; }
+
+    if(verb === &#x27;x&#x27;){ return callback(null, verb, self.eventLoopDelay); }
+
+    if(verb === &#x27;-&#x27;){
+      var worker = self.workers.pop();
+      worker.end(function(error){
+        self.cleanupWorker(worker);
+        return callback(error, verb, self.eventLoopDelay);
+      });
+    }
+
+    if(verb === &#x27;--&#x27;){
+      var jobs = [];
+
+      var stopWorker = function(worker){
+        jobs.push(function(done){
+          worker.end(function(error){
+            if(error){ return done(error); }
+            self.cleanupWorker(worker);
+            done();
+          });
+        });
+      };
+
+      while(self.workers.length &#x3e; 0){
+        var worker = self.workers.pop();
+        stopWorker(worker);
+      }
+
+      async.parallel(jobs, function(error){
+        self.workers = [];
+        callback(error, verb, self.eventLoopDelay);
+      });
+    }
+
+    if(verb === &#x27;+&#x27;){
+      self.startWorker(function(error){
+        callback(error, verb, self.eventLoopDelay);
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  worker.connection.end();
+}
+};
+
+multiWorker.prototype.checkWraper = function(callback){
+var self = this;
+clearTimeout(self.checkTimer);
+self.<span class="apidocCodeKeywordSpan">checkWorkers</span>(function(error, verb, delay){
+  if(error){ self.emit(&#x27;internalError&#x27;, error); }
+  self.emit(&#x27;multiWorkerAction&#x27;, verb, delay);
+  self.checkTimer = setTimeout(function(){
+    self.checkWraper();
+  }, self.options.checkTimeout);
+  if(typeof callback === &#x27;function&#x27;){ callback(); }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.checkWraper" id="apidoc.element.node-resque.multiWorker.prototype.checkWraper">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>checkWraper
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkWraper = function (callback){
+  var self = this;
+  clearTimeout(self.checkTimer);
+  self.checkWorkers(function(error, verb, delay){
+    if(error){ self.emit(&#x27;internalError&#x27;, error); }
+    self.emit(&#x27;multiWorkerAction&#x27;, verb, delay);
+    self.checkTimer = setTimeout(function(){
+      self.checkWraper();
+    }, self.options.checkTimeout);
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+multiWorker.prototype.checkWraper = function(callback){
+var self = this;
+clearTimeout(self.checkTimer);
+self.checkWorkers(function(error, verb, delay){
+  if(error){ self.emit(&#x27;internalError&#x27;, error); }
+  self.emit(&#x27;multiWorkerAction&#x27;, verb, delay);
+  self.checkTimer = setTimeout(function(){
+    self.<span class="apidocCodeKeywordSpan">checkWraper</span>();
+  }, self.options.checkTimeout);
+  if(typeof callback === &#x27;function&#x27;){ callback(); }
+});
+};
+
+multiWorker.prototype.start = function(callback){
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.cleanupWorker" id="apidoc.element.node-resque.multiWorker.prototype.cleanupWorker">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>cleanupWorker
+        <span class="apidocSignatureSpan">(worker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanupWorker = function (worker){
+  var self = this;
+
+  [
+    &#x27;start&#x27;,
+    &#x27;end&#x27;,
+    &#x27;cleaning_worker&#x27;,
+    &#x27;poll&#x27;,
+    &#x27;job&#x27;,
+    &#x27;reEnqueue&#x27;,
+    &#x27;success&#x27;,
+    &#x27;failure&#x27;,
+    &#x27;error&#x27;,
+    &#x27;pause&#x27;,
+    &#x27;internalError&#x27;,
+    &#x27;multiWorkerAction&#x27;,
+  ].forEach(function(e){
+    worker.removeAllListeners(e);
+  });
+
+  if(self.options.toDisconnectProcessors === true){
+    worker.connection.end();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+else{ verb = &#x27;x&#x27;; }
+
+if(verb === &#x27;x&#x27;){ return callback(null, verb, self.eventLoopDelay); }
+
+if(verb === &#x27;-&#x27;){
+  var worker = self.workers.pop();
+  worker.end(function(error){
+    self.<span class="apidocCodeKeywordSpan">cleanupWorker</span>(worker);
+    return callback(error, verb, self.eventLoopDelay);
+  });
+}
+
+if(verb === &#x27;--&#x27;){
+  var jobs = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.defaults" id="apidoc.element.node-resque.multiWorker.prototype.defaults">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (){
+  var self = this;
+  // all times in ms
+  return {
+    minTaskProcessors:   1,
+    maxTaskProcessors:   10,
+    timeout:             5000,
+    checkTimeout:        500,
+    maxEventLoopDelay:   10,
+    toDisconnectProcessors: true,
+    name: os.hostname()
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var util  = require(&#x27;util&#x27;);
+var async = require(&#x27;async&#x27;);
+var EventEmitter = require(&#x27;events&#x27;).EventEmitter;
+
+var connection = function(options){
+var self = this;
+var defaults = self.<span class="apidocCodeKeywordSpan">defaults</span>();
+
+if(!options){ options = {}; }
+for(var i in defaults){
+  if(options[i] === null || options[i] === undefined){
+    options[i] = defaults[i];
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.end" id="apidoc.element.node-resque.multiWorker.prototype.end">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>end
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (callback){
+  var self = this;
+  self.stop(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+worker.connect(function(){
+  worker.start();
+});
+```
+
+## Notes
+- Be sure to call `worker.<span class="apidocCodeKeywordSpan">end</span>(callback)`, `queue.end(callback)` and `scheduler.end(callback
+)` before shutting down your application if you want to properly clear your worker status from resque
+- When ending your application, be sure to allow your workers time to finish what they are working on
+- This project implements the &#x22;scheduler&#x22; part of rescue-scheduler (the daemon which can promote enqueued delayed jobs
+ into the work queues when it is time), but not the CRON scheduler proxy.  To learn more about how to use a CRON-like scheduler,
+read the [Job Schedules](#job-schedules) section of this document.
+- If you are using any plugins which effect `beforeEnqueue` or `afterEnqueue`, be sure to pass the `jobs` argument to the `new Queue
+` constructor
+- If a job fails, it will be added to a special `failed` queue.  You can then inspect these jobs, write a plugin to manage them,
+move them back to the normal queues, etc.  Failure behavior by default is just to enter the `failed` queue, but there are many options
+.  Check out these examples from the ruby ecosystem for inspiration:
+  - https://github.com/lantins/resque-retry
+  - https://github.com/resque/resque/wiki/Failure-Backends
+- If you plan to run more than one worker per nodejs process, be sure to name them something distinct.  Names **must** follow the
+ pattern `hostname:pid+unique_id`.  For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.start" id="apidoc.element.node-resque.multiWorker.prototype.start">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>start
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (callback){
+  var self = this;
+  self.running = true;
+  self.checkWraper(function(){
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.<span class="apidocCodeKeywordSpan">start</span>();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+
+var scheduler = new NR.scheduler({connection: connectionDetails});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.startWorker" id="apidoc.element.node-resque.multiWorker.prototype.startWorker">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>startWorker
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startWorker = function (callback){
+  var self = this;
+  var id = (self.workers.length + 1);
+  var worker = new Worker({
+    connection: self.options.connection,
+    queues:     self.options.queues,
+    timeout:    self.options.timeout,
+    name:       self.options.name + &#x27;:&#x27; + process.pid + &#x27;+&#x27; + id
+  }, self.jobs);
+  worker.connect(function(error){
+    if(error){ self.emit(&#x27;error&#x27;, error); }
+    worker.workerCleanup(function(error){
+      worker.start();
+      if(error){ self.emit(&#x27;error&#x27;, error); }
+      process.nextTick(callback);
+    });
+  });
+
+  worker.id = id;
+
+  worker.on(&#x27;start&#x27;,           function(){                    self.emit(&#x27;start&#x27;, worker.id);                         });
+  worker.on(&#x27;end&#x27;,             function(){                    self.emit(&#x27;end&#x27;, worker.id);                           });
+  worker.on(&#x27;cleaning_worker&#x27;, function(worker, pid){         self.emit(&#x27;cleaning_worker&#x27;, worker.id, worker, pid);  });
+  worker.on(&#x27;poll&#x27;,            function(queue){               self.emit(&#x27;poll&#x27;, worker.id, queue);                   });
+  worker.on(&#x27;job&#x27;,             function(queue, job){          self.emit(&#x27;job&#x27;, worker.id, queue, job);               });
+  worker.on(&#x27;reEnqueue&#x27;,       function(queue, job, plugin){  self.emit(&#x27;reEnqueue&#x27;, worker.id, queue, job, plugin); });
+  worker.on(&#x27;success&#x27;,         function(queue, job, result){  self.emit(&#x27;success&#x27;, worker.id, queue, job, result);   });
+  worker.on(&#x27;failure&#x27;,         function(queue, job, failure){ self.emit(&#x27;failure&#x27;, worker.id, queue, job, failure);  });
+  worker.on(&#x27;error&#x27;,           function(queue, job, error){   self.emit(&#x27;error&#x27;, worker.id, queue, job, error);      });
+  worker.on(&#x27;pause&#x27;,           function(){                    self.emit(&#x27;pause&#x27;, worker.id);                         });
+
+  self.workers.push(worker);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      async.parallel(jobs, function(error){
+        self.workers = [];
+        callback(error, verb, self.eventLoopDelay);
+      });
+    }
+
+    if(verb === &#x27;+&#x27;){
+      self.<span class="apidocCodeKeywordSpan">startWorker</span>(function(error){
+        callback(error, verb, self.eventLoopDelay);
+      });
+    }
+  });
+};
+
+multiWorker.prototype.cleanupWorker = function(worker){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.stop" id="apidoc.element.node-resque.multiWorker.prototype.stop">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>stop
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (callback){
+  var self = this;
+  self.running = false;
+  self.stopWait(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this;
+self.running = false;
+self.stopWait(callback);
+};
+
+multiWorker.prototype.end = function(callback){
+var self = this;
+self.<span class="apidocCodeKeywordSpan">stop</span>(callback);
+};
+
+multiWorker.prototype.stopWait = function(callback){
+var self = this;
+if(self.workers.length === 0 &#x26;&#x26; self.working === false){
+  clearTimeout(self.checkTimer);
+  process.nextTick(function(){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.multiWorker.prototype.stopWait" id="apidoc.element.node-resque.multiWorker.prototype.stopWait">
+        function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>stopWait
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopWait = function (callback){
+  var self = this;
+  if(self.workers.length === 0 &#x26;&#x26; self.working === false){
+    clearTimeout(self.checkTimer);
+    process.nextTick(function(){
+      if(typeof callback === &#x27;function&#x27;){ callback(); }
+    });
+  }else{
+    setTimeout(function(){
+      self.stopWait(callback);
+    }, self.options.checkTimeout);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  });
+};
+
+multiWorker.prototype.stop = function(callback){
+  var self = this;
+  self.running = false;
+  self.<span class="apidocCodeKeywordSpan">stopWait</span>(callback);
+};
+
+multiWorker.prototype.end = function(callback){
+  var self = this;
+  self.stop(callback);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.pluginRunner" id="apidoc.module.node-resque.pluginRunner">module node-resque.pluginRunner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.pluginRunner.runPlugin" id="apidoc.element.node-resque.pluginRunner.runPlugin">
+        function <span class="apidocSignatureSpan">node-resque.pluginRunner.</span>runPlugin
+        <span class="apidocSignatureSpan">(self, pluginRefrence, type, func, queue, job, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runPlugin = function (self, pluginRefrence, type, func, queue, job, args, callback){
+  process.nextTick(function(){
+    if(!job){
+      callback(null, true);
+    }else{
+
+      var pluginName = pluginRefrence;
+      if(typeof pluginRefrence === &#x27;function&#x27;){
+        pluginName = new pluginRefrence(self, func, queue, job, args, {}).name;
+      }
+
+      var pluginOptions = null;
+      if(self.jobs[func].pluginOptions &#x26;&#x26; self.jobs[func].pluginOptions[pluginName]){
+        pluginOptions = self.jobs[func].pluginOptions[pluginName];
+      }else{
+        pluginOptions = {};
+      }
+
+      var plugin = null;
+      if(typeof pluginRefrence === &#x27;string&#x27;){
+        var pluginConstructor = require(__dirname + &#x27;/plugins/&#x27; + pluginRefrence + &#x27;.js&#x27;)[pluginRefrence];
+        plugin = new pluginConstructor(self, func, queue, job, args, pluginOptions);
+      }else if(typeof pluginRefrence === &#x27;function&#x27;){
+        plugin = new pluginRefrence(self, func, queue, job, args, pluginOptions);
+      }else{
+        throw new Error(&#x27;Plugin must be the constructor name or an object&#x27;);
+      }
+
+      if(plugin[type] === null || plugin[type] === undefined  || typeof plugin[type] !== &#x27;function&#x27;){
+        callback(null, true);
+      }else{
+        plugin[type](function(err, toRun){
+          callback(err, toRun);
+        });
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.pluginRunner.runPlugins" id="apidoc.element.node-resque.pluginRunner.runPlugins">
+        function <span class="apidocSignatureSpan">node-resque.pluginRunner.</span>runPlugins
+        <span class="apidocSignatureSpan">(self, type, func, queue, job, args, callback, pluginCounter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runPlugins = function (self, type, func, queue, job, args, callback, pluginCounter){
+  if(!pluginCounter){ pluginCounter = 0; }
+  if(!job){
+    callback(null, true);
+  }else if(job.plugins === null || job.plugins === undefined || job.plugins.length === 0){
+    callback(null, true);
+  }else if(pluginCounter &#x3e;= job.plugins.length){
+    callback(null, true);
+  }else{
+    var pluginRefrence = job.plugins[pluginCounter];
+    runPlugin(self, pluginRefrence, type, func, queue, job, args, function(err, toRun){
+      pluginCounter++;
+      if(err){
+        callback(err, toRun);
+      }else if(toRun === false){
+        callback(err, false);
+      }else{
+        runPlugins(self, type, func, queue, job, args, callback, pluginCounter);
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }else if(arguments.length &#x3c; 3){
+args = [];
+  }
+
+  args = arrayify(args);
+  var job = self.jobs[func];
+
+  pluginRunner.<span class="apidocCodeKeywordSpan">runPlugins</span>(self, &#x27;before_enqueue&#x27;, func, q, job, args, function
+(error, toRun){
+if(error){ return callback(error); }
+if(toRun === false){ return callback(error, toRun); }
+
+jobs.push(function(done){
+  self.connection.redis.sadd(self.connection.key(&#x27;queues&#x27;), q, done);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.queue" id="apidoc.module.node-resque.queue">module node-resque.queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.queue" id="apidoc.element.node-resque.queue.queue">
+        function <span class="apidocSignatureSpan">node-resque.</span>queue
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queue = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+
+  self.options = options;
+  self.jobs    = jobs;
+
+  self.connection = new connection(options.connection);
+
+  self.connection.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+scheduler.on(&#x27;working_timestamp&#x27;, function(timestamp){ console.log(&#x22;scheduler working timestamp &#x22; + timestamp
+); });
+scheduler.on(&#x27;transferred_job&#x27;,   function(timestamp, job){ console.log(&#x22;scheduler enquing job &#x22; + timestamp
+ + &#x22; &#x3e;&#x3e; &#x22; + JSON.stringify(job)); });
+
+////////////////////////
+// CONNECT TO A QUEUE //
+////////////////////////
+
+var queue = new NR.<span class="apidocCodeKeywordSpan">queue</span>({connection: connectionDetails}, jobs);
+queue.on(&#x27;error&#x27;, function(error){ console.log(error); });
+queue.connect(function(){
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [2,3]);
+  queue.enqueueIn(3000, &#x27;math&#x27;, &#x22;subtract&#x22;, [2,1]);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.super_" id="apidoc.element.node-resque.queue.super_">
+        function <span class="apidocSignatureSpan">node-resque.queue.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.queue.prototype" id="apidoc.module.node-resque.queue.prototype">module node-resque.queue.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.allDelayed" id="apidoc.element.node-resque.queue.prototype.allDelayed">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>allDelayed
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allDelayed = function (callback){
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.timestamps(function(error, timestamps){
+    if(error){ return callback(error); }
+
+    timestamps.forEach(function(timestamp){
+      jobs.push(function(done){
+        self.delayedAt(timestamp, function(error, tasks, rTimestamp){
+          if(error){ return done(error); }
+          results[(rTimestamp * 1000)] = tasks;
+          done();
+        });
+      });
+    });
+
+    async.series(jobs, function(error){
+      return callback(error, results);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.allWorkingOn" id="apidoc.element.node-resque.queue.prototype.allWorkingOn">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>allWorkingOn
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allWorkingOn = function (callback){
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.workers(function(error, workers){
+    if(error){ return callback(error); }
+
+    Object.keys(workers).forEach(function(w){
+      jobs.push(function(done){
+        results[w] = &#x27;started&#x27;;
+        self.workingOn(w, workers[w], function(error, data){
+          if(error){ return done(error); }
+          if(data){
+            data = JSON.parse(data);
+            results[data.worker] = data;
+          }
+          done();
+        });
+      });
+    });
+
+    async.series(jobs, function(error){
+      return callback(error, results);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // note: this method will remove the data created by a &#x27;stuck&#x27; worker and move the payload to the error queue
+  // however, it will not actually remove any processes which may be running.  A job *may* be running that you have removed
+
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.<span class="apidocCodeKeywordSpan">allWorkingOn</span>(function(error, data){
+if(error){ return callback(error); }
+
+Object.keys(data).forEach(function(workerName){
+  jobs.push(function(done){
+    if(Date.now() - Date.parse(data[workerName].run_at) &#x3e; age){
+      self.forceCleanWorker(workerName, function(error, errorPayload){
+        if(errorPayload &#x26;&#x26; errorPayload.worker){ results[errorPayload.worker] = errorPayload; }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.cleanOldWorkers" id="apidoc.element.node-resque.queue.prototype.cleanOldWorkers">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>cleanOldWorkers
+        <span class="apidocSignatureSpan">(age, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanOldWorkers = function (age, callback){
+  // note: this method will remove the data created by a &#x27;stuck&#x27; worker and move the payload to the error queue
+  // however, it will not actually remove any processes which may be running.  A job *may* be running that you have removed
+
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.allWorkingOn(function(error, data){
+    if(error){ return callback(error); }
+
+    Object.keys(data).forEach(function(workerName){
+      jobs.push(function(done){
+        if(Date.now() - Date.parse(data[workerName].run_at) &#x3e; age){
+          self.forceCleanWorker(workerName, function(error, errorPayload){
+            if(errorPayload &#x26;&#x26; errorPayload.worker){ results[errorPayload.worker] = errorPayload; }
+            done(error);
+          });
+        }else{
+          done();
+        }
+      });
+    });
+
+    async.series(jobs, function(error){
+      return callback(error, results);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- **queue.retryAndRemoveFailed** = function(failedJob, callback)
+  - callback(error)
+  - the input `failedJob` is an expanded node object representing the failed job, retrieved via `queue.failed`
+  - this method will instantly re-enqueue a failed job back to its original queue, and delete the failed entry for that job
+
+## Failed Worker Management
+
+Sometimes a worker crashes is a *severe* way, and it doesn&#x27;t get the time/chance to notify redis that it is leaving the pool
+ (this happens all the time on PAAS providers like Heroku).  When this happens, you will not only need to extract the job from the
+ now-zombie worker&#x27;s &#x22;working on&#x22; status, but also remove the stuck worker.  To aid you in these edge cases, ``queue
+.<span class="apidocCodeKeywordSpan">cleanOldWorkers</span>(age, callback)` is available.
+
+Because there are no &#x27;heartbeats&#x27; in resque, it is imposable for the application to know if a worker has been working
+on a long job or it is dead.  You are required to provide an &#x22;age&#x22; for how long a worker has been &#x22;working&#x22;,
+and all those older than that age will be removed, and the job they are working on moved to the error queue (where you can then
+use `queue.retryAndRemoveFailed`) to re-enqueue the job.
+
+If you know the name of a worker that should be removed, you can also call `queue.forceCleanWorker(workerName, callback)` directly
+, and that will also remove the worker and move any job it was working on into the error queue.
+
+## Job Schedules
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.connect" id="apidoc.element.node-resque.queue.prototype.connect">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback){
+  var self = this;
+  self.connection.connect(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.<span class="apidocCodeKeywordSpan">connect</span>(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.del" id="apidoc.element.node-resque.queue.prototype.del">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>del
+        <span class="apidocSignatureSpan">(q, func, args, count, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (q, func, args, count, callback){
+  var self = this;
+
+  if(typeof count === &#x27;function&#x27; &#x26;&#x26; callback === undefined){
+    callback = count;
+    count = 0;
+  }else if(arguments.length === 3){
+    if(typeof args === &#x27;function&#x27;){
+      callback = args;
+      args = [];
+    }
+    count = 0;
+  }else if(arguments.length &#x3c; 3){
+    args = [];
+    count = 0;
+  }
+
+  args = arrayify(args);
+  self.connection.redis.lrem(self.connection.key(&#x27;queue&#x27;, q), count, self.encode(q, func, args), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+queue.prototype.queues = function(callback){
+var self = this;
+self.connection.redis.smembers(self.connection.key(&#x27;queues&#x27;), callback);
+};
+
+queue.prototype.delQueue = function(q, callback){
+var self = this;
+self.connection.redis.<span class="apidocCodeKeywordSpan">del</span>(self.connection.key(&#x27;queue&#x27;, q), function(error){
+  if(error){ return callback(error); }
+  self.connection.redis.srem(self.connection.key(&#x27;queues&#x27;), q, callback);
+});
+};
+
+queue.prototype.length = function(q, callback){
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.delDelayed" id="apidoc.element.node-resque.queue.prototype.delDelayed">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delDelayed
+        <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delDelayed = function (q, func, args, callback){
+  var self = this;
+  var jobs = [];
+  var timestamps = [];
+
+  if(arguments.length === 3 &#x26;&#x26; typeof args === &#x27;function&#x27;){
+    callback = args;
+    args = [];
+  }else if(arguments.length &#x3c; 3){
+    args = [];
+  }
+
+  args = arrayify(args);
+  var search = self.encode(q, func, args);
+  var timestamps = [];
+  self.connection.redis.smembers(self.connection.key(&#x27;timestamps:&#x27; + search), function(error, members){
+    if(error){ return callback(error); }
+
+    members.forEach(function(key){
+      jobs.push(function(done){
+        self.connection.redis.lrem(self.connection.key(key), 0, search, function(error, count){
+          if(error){ return done(error); }
+          if(count &#x3e; 0){
+            timestamps.push(key.split(&#x27;:&#x27;)[key.split(&#x27;:&#x27;).length - 1]);
+            self.connection.redis.srem(self.connection.key(&#x27;timestamps:&#x27; + search), key, done);
+          }else{
+            done();
+          }
+        });
+      });
+    });
+
+    async.series(jobs, function(error){
+      return callback(error, timestamps);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.delLock" id="apidoc.element.node-resque.queue.prototype.delLock">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delLock
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delLock = function (key, callback){
+  var self = this;
+  self.connection.redis.del(self.connection.key(key), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.delQueue" id="apidoc.element.node-resque.queue.prototype.delQueue">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delQueue
+        <span class="apidocSignatureSpan">(q, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delQueue = function (q, callback){
+  var self = this;
+  self.connection.redis.del(self.connection.key(&#x27;queue&#x27;, q), function(error){
+    if(error){ return callback(error); }
+    self.connection.redis.srem(self.connection.key(&#x27;queues&#x27;), q, callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.delayedAt" id="apidoc.element.node-resque.queue.prototype.delayedAt">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>delayedAt
+        <span class="apidocSignatureSpan">(timestamp, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delayedAt = function (timestamp, callback){
+  var self = this;
+  var rTimestamp = Math.round(timestamp / 1000); // assume timestamp is in ms
+  self.connection.redis.lrange(self.connection.key(&#x27;delayed:&#x27; + rTimestamp), 0, -1, function(error, items){
+    var tasks = items.map(function(i){ return JSON.parse(i); });
+    callback(error, tasks, rTimestamp);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var jobs = [];
+
+  self.timestamps(function(error, timestamps){
+if(error){ return callback(error); }
+
+timestamps.forEach(function(timestamp){
+  jobs.push(function(done){
+    self.<span class="apidocCodeKeywordSpan">delayedAt</span>(timestamp, function(error, tasks, rTimestamp){
+      if(error){ return done(error); }
+      results[(rTimestamp * 1000)] = tasks;
+      done();
+    });
+  });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.encode" id="apidoc.element.node-resque.queue.prototype.encode">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>encode
+        <span class="apidocSignatureSpan">(q, func, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (q, func, args){
+  return JSON.stringify({
+    &#x27;class&#x27;: func,
+    queue: q,
+    args: args || []
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if(toRun === false){ return callback(error, toRun); }
+
+jobs.push(function(done){
+  self.connection.redis.sadd(self.connection.key(&#x27;queues&#x27;), q, done);
+});
+
+jobs.push(function(done){
+  self.connection.redis.rpush(self.connection.key(&#x27;queue&#x27;, q), self.<span class="apidocCodeKeywordSpan">encode</span>(
+q, func, args), done);
+});
+
+jobs.push(function(done){
+  pluginRunner.runPlugins(self, &#x27;after_enqueue&#x27;, func, q, job, args, done);
+});
+
+async.series(jobs, callback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.end" id="apidoc.element.node-resque.queue.prototype.end">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>end
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (callback){
+  var self = this;
+  self.connection.end();
+  return callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+worker.connect(function(){
+  worker.start();
+});
+```
+
+## Notes
+- Be sure to call `worker.<span class="apidocCodeKeywordSpan">end</span>(callback)`, `queue.end(callback)` and `scheduler.end(callback
+)` before shutting down your application if you want to properly clear your worker status from resque
+- When ending your application, be sure to allow your workers time to finish what they are working on
+- This project implements the &#x22;scheduler&#x22; part of rescue-scheduler (the daemon which can promote enqueued delayed jobs
+ into the work queues when it is time), but not the CRON scheduler proxy.  To learn more about how to use a CRON-like scheduler,
+read the [Job Schedules](#job-schedules) section of this document.
+- If you are using any plugins which effect `beforeEnqueue` or `afterEnqueue`, be sure to pass the `jobs` argument to the `new Queue
+` constructor
+- If a job fails, it will be added to a special `failed` queue.  You can then inspect these jobs, write a plugin to manage them,
+move them back to the normal queues, etc.  Failure behavior by default is just to enter the `failed` queue, but there are many options
+.  Check out these examples from the ruby ecosystem for inspiration:
+  - https://github.com/lantins/resque-retry
+  - https://github.com/resque/resque/wiki/Failure-Backends
+- If you plan to run more than one worker per nodejs process, be sure to name them something distinct.  Names **must** follow the
+ pattern `hostname:pid+unique_id`.  For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.enqueue" id="apidoc.element.node-resque.queue.prototype.enqueue">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueue
+        <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enqueue = function (q, func, args, callback){
+  var self = this;
+  var jobs = [];
+  if(arguments.length === 3 &#x26;&#x26; typeof args === &#x27;function&#x27;){
+    callback = args;
+    args = [];
+  }else if(arguments.length &#x3c; 3){
+    args = [];
+  }
+
+  args = arrayify(args);
+  var job = self.jobs[func];
+
+  pluginRunner.runPlugins(self, &#x27;before_enqueue&#x27;, func, q, job, args, function(error, toRun){
+    if(error){ return callback(error); }
+    if(toRun === false){ return callback(error, toRun); }
+
+    jobs.push(function(done){
+      self.connection.redis.sadd(self.connection.key(&#x27;queues&#x27;), q, done);
+    });
+
+    jobs.push(function(done){
+      self.connection.redis.rpush(self.connection.key(&#x27;queue&#x27;, q), self.encode(q, func, args), done);
+    });
+
+    jobs.push(function(done){
+      pluginRunner.runPlugins(self, &#x27;after_enqueue&#x27;, func, q, job, args, done);
+    });
+
+    async.series(jobs, callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+////////////////////////
+// CONNECT TO A QUEUE //
+////////////////////////
+
+var queue = new NR.queue({connection: connectionDetails}, jobs);
+queue.on(&#x27;error&#x27;, function(error){ console.log(error); });
+queue.connect(function(){
+  queue.<span class="apidocCodeKeywordSpan">enqueue</span>(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [2,3]);
+  queue.enqueueIn(3000, &#x27;math&#x27;, &#x22;subtract&#x22;, [2,1]);
+});
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.enqueueAt" id="apidoc.element.node-resque.queue.prototype.enqueueAt">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueueAt
+        <span class="apidocSignatureSpan">(timestamp, q, func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enqueueAt = function (timestamp, q, func, args, callback){
+  // Don&#x27;t run plugins here, they should be run by scheduler at the enqueue step
+  var self = this;
+  var jobs = [];
+
+  if(arguments.length === 4 &#x26;&#x26; typeof args === &#x27;function&#x27;){
+    callback = args;
+    args = [];
+  }else if(arguments.length &#x3c; 4){
+    args = [];
+  }
+
+  args = arrayify(args);
+  var item = self.encode(q, func, args);
+  var rTimestamp = Math.round(timestamp / 1000); // assume timestamp is in ms
+
+  jobs.push(function(done){
+    // check if this jobs is already enqueued at this time
+    var match = (&#x27;delayed:&#x27; + rTimestamp);
+    self.connection.redis.smembers(self.connection.key(&#x27;timestamps:&#x27; + item), function(error, members){
+      for(var i in members){
+        if(members[i] === match){
+          return done(new Error(&#x27;Job already enqueued at this time with same arguments&#x27;));
+        }
+      }
+
+      done(error);
+    });
+  });
+
+  jobs.push(function(done){
+    // enqueue the encoded job into a list per timestmp to be popped and workered later
+    self.connection.redis.rpush(self.connection.key(&#x27;delayed:&#x27; + rTimestamp), item, done);
+  });
+
+  jobs.push(function(done){
+    // save the job + args into a set so that it can be checked by plugins
+    self.connection.redis.sadd(self.connection.key(&#x27;timestamps:&#x27; + item), (&#x27;delayed:&#x27; + rTimestamp), done);
+  });
+
+  jobs.push(function(done){
+    self.connection.redis.zadd(self.connection.key(&#x27;delayed_queue_schedule&#x27;), rTimestamp, rTimestamp, done);
+  });
+
+  async.series(jobs, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    args = [];
+  }else if(arguments.length &#x3c; 4){
+    args = [];
+  }
+
+  args = arrayify(args);
+  var timestamp = (new Date().getTime()) + parseInt(time, 10);
+  self.<span class="apidocCodeKeywordSpan">enqueueAt</span>(timestamp, q, func, args, callback);
+};
+
+queue.prototype.queues = function(callback){
+  var self = this;
+  self.connection.redis.smembers(self.connection.key(&#x27;queues&#x27;), callback);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.enqueueIn" id="apidoc.element.node-resque.queue.prototype.enqueueIn">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>enqueueIn
+        <span class="apidocSignatureSpan">(time, q, func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enqueueIn = function (time, q, func, args, callback){
+  var self = this;
+
+  if(arguments.length === 4 &#x26;&#x26; typeof args === &#x27;function&#x27;){
+    callback = args;
+    args = [];
+  }else if(arguments.length &#x3c; 4){
+    args = [];
+  }
+
+  args = arrayify(args);
+  var timestamp = (new Date().getTime()) + parseInt(time, 10);
+  self.enqueueAt(timestamp, q, func, args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var queue = new NR.queue({connection: connectionDetails}, jobs);
+queue.on(&#x27;error&#x27;, function(error){ console.log(error); });
+queue.connect(function(){
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [1,2]);
+  queue.enqueue(&#x27;math&#x27;, &#x22;add&#x22;, [2,3]);
+  queue.<span class="apidocCodeKeywordSpan">enqueueIn</span>(3000, &#x27;math&#x27;, &#x22;subtract&#x22;, [2,1]);
+});
+
+```
+
+## Configuration Options:
+
+`new queue` requires only the &#x22;queue&#x22; variable to be set.  You can also pass the `jobs` hash to it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.failed" id="apidoc.element.node-resque.queue.prototype.failed">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>failed
+        <span class="apidocSignatureSpan">(start, stop, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failed = function (start, stop, callback){
+  var self = this;
+  self.connection.redis.lrange(self.connection.key(&#x27;failed&#x27;), start, stop, function(error, data){
+    var results = data.map(function(i){ return JSON.parse(i); });
+    callback(error, results);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.failedCount" id="apidoc.element.node-resque.queue.prototype.failedCount">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>failedCount
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failedCount = function (callback){
+  var self = this;
+  self.connection.redis.llen(self.connection.key(&#x27;failed&#x27;), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.forceCleanWorker" id="apidoc.element.node-resque.queue.prototype.forceCleanWorker">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>forceCleanWorker
+        <span class="apidocSignatureSpan">(workerName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forceCleanWorker = function (workerName, callback){
+  var self = this;
+  var errorPayload;
+  var jobs = [];
+
+  self.workers(function(error, workers){
+    if(error){ return callback(error); }
+    var queues = workers[workerName];
+    if(!queues){ return callback(new Error(&#x27;worker not round&#x27;)); }
+
+    self.workingOn(workerName, queues, function(error, workingOn){
+      if(error){ return callback(error); }
+      if(workingOn){
+        workingOn = JSON.parse(workingOn);
+        errorPayload = {
+          worker: workerName,
+          queue: workingOn.queue,
+          payload: workingOn.payload,
+          exception: &#x27;Worker Timeout (killed manually)&#x27;,
+          error: &#x27;Worker Timeout (killed manually)&#x27;,
+          backtrace: null,
+          failed_at: (new Date()).toString()
+        };
+
+        jobs.push(function(done){
+          self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;), done);
+        });
+
+        jobs.push(function(done){
+          self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;, workerName), done);
+        });
+
+        jobs.push(function(done){
+          self.connection.redis.rpush(self.connection.key(&#x27;failed&#x27;), JSON.stringify(errorPayload), done);
+        });
+      }
+
+      jobs.push(function(done){
+        self.connection.redis.del(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;, workerName), done);
+      });
+
+      jobs.push(function(done){
+        self.connection.redis.del(self.connection.key(&#x27;stat&#x27;, &#x27;processed&#x27;, workerName), done);
+      });
+
+      jobs.push(function(done){
+        self.connection.redis.del(self.connection.key(&#x27;worker&#x27;, workerName), done);
+      });
+
+      jobs.push(function(done){
+        self.connection.redis.srem(self.connection.key(&#x27;workers&#x27;), workerName + &#x27;:&#x27; + queues, done);
+      });
+
+      async.series(jobs, function(error){
+        return callback(error, errorPayload);
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Failed Worker Management
+
+Sometimes a worker crashes is a *severe* way, and it doesn&#x27;t get the time/chance to notify redis that it is leaving the pool
+ (this happens all the time on PAAS providers like Heroku).  When this happens, you will not only need to extract the job from the
+ now-zombie worker&#x27;s &#x22;working on&#x22; status, but also remove the stuck worker.  To aid you in these edge cases, ``queue
+.cleanOldWorkers(age, callback)` is available.
+
+Because there are no &#x27;heartbeats&#x27; in resque, it is imposable for the application to know if a worker has been working
+on a long job or it is dead.  You are required to provide an &#x22;age&#x22; for how long a worker has been &#x22;working&#x22;,
+and all those older than that age will be removed, and the job they are working on moved to the error queue (where you can then
+use `queue.retryAndRemoveFailed`) to re-enqueue the job.
+
+If you know the name of a worker that should be removed, you can also call `queue.<span class="apidocCodeKeywordSpan">forceCleanWorker
+</span>(workerName, callback)` directly, and that will also remove the worker and move any job it was working on into the error
+queue.
+
+## Job Schedules
+
+You may want to use node-resque to schedule jobs every minute/hour/day, like a distributed CRON system.  There are a number of excellent
+ node packages to help you with this, like [node-schedule](https://github.com/tejasmanohar/node-schedule) and [node-cron](https://
+github.com/ncb000gt/node-cron).  Node-resque makes it possible for you to use the package of your choice to schedule jobs with.
+
+Assuming you are running node-resque across multiple machines, you will need to ensure that only one of your processes is actually
+ scheduling the jobs.  To help you with this, you can inspect which of the scheduler processes is currently acting as master, and
+ flag only the master scheduler process to run the schedule.  A full example can be found at [/examples/scheduledJobs.js](https://
+github.com/taskrabbit/node-resque/blob/master/examples/scheduledJobs.js), but the relevant section is:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.length" id="apidoc.element.node-resque.queue.prototype.length">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>length
+        <span class="apidocSignatureSpan">(q, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">length = function (q, callback){
+  var self = this;
+  self.connection.redis.llen(self.connection.key(&#x27;queue&#x27;, q), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.locks" id="apidoc.element.node-resque.queue.prototype.locks">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>locks
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">locks = function (callback){
+  var self = this;
+  var keys = [];
+  var data = {};
+  var jobs = [];
+
+  jobs.push(function(done){
+    self.connection.redis.keys(self.connection.key(&#x27;lock:*&#x27;), function(error, _keys){
+      if(error){ return done(error); }
+      keys = keys.concat(_keys);
+      done();
+    });
+  });
+
+  jobs.push(function(done){
+    self.connection.redis.keys(self.connection.key(&#x27;workerslock:*&#x27;), function(error, _keys){
+      if(error){ return done(error); }
+      keys = keys.concat(_keys);
+      done();
+    });
+  });
+
+  async.parallel(jobs, function(error){
+    if(error){ return callback(error); }
+    if(keys.length === 0){ return callback(null, data); }
+
+    self.connection.redis.mget(keys, function(error, values){
+      if(error){ return callback(error); }
+
+      for(var i = 0; i &#x3c; keys.length; i++){
+        var k = keys[i];
+        k = k.replace(self.connection.key(&#x27;&#x27;), &#x27;&#x27;);
+        data[k] = values[i];
+      }
+
+      callback(null, data);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.queued" id="apidoc.element.node-resque.queue.prototype.queued">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>queued
+        <span class="apidocSignatureSpan">(q, start, stop, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queued = function (q, start, stop, callback){
+  var self = this;
+  self.connection.redis.lrange(self.connection.key(&#x27;queue&#x27;, q), start, stop, function(error, items){
+    var tasks = items.map(function(i){ return JSON.parse(i); });
+    callback(error, tasks);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.queues" id="apidoc.element.node-resque.queue.prototype.queues">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>queues
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queues = function (callback){
+  var self = this;
+  self.connection.redis.smembers(self.connection.key(&#x27;queues&#x27;), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.removeFailed" id="apidoc.element.node-resque.queue.prototype.removeFailed">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>removeFailed
+        <span class="apidocSignatureSpan">(failedJob, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFailed = function (failedJob, callback){
+  var self = this;
+  self.connection.redis.lrem(self.connection.key(&#x27;failed&#x27;), 1, JSON.stringify(failedJob), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+queue.prototype.removeFailed = function(failedJob, callback){
+  var self = this;
+  self.connection.redis.lrem(self.connection.key(&#x27;failed&#x27;), 1, JSON.stringify(failedJob), callback);
+};
+
+queue.prototype.retryAndRemoveFailed = function(failedJob, callback){
+  var self = this;
+  self.<span class="apidocCodeKeywordSpan">removeFailed</span>(failedJob, function(error, countFailed){
+    if(error){ return callback(error, failedJob); }
+    if(countFailed &#x3c; 1){ return callback(new Error(&#x27;This job is not in failed queue&#x27;), failedJob); }
+    self.enqueue(failedJob.queue, failedJob.payload[&#x27;class&#x27;], failedJob.payload.args, callback);
+  });
+};
+
+queue.prototype.stats = function(callback){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.retryAndRemoveFailed" id="apidoc.element.node-resque.queue.prototype.retryAndRemoveFailed">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>retryAndRemoveFailed
+        <span class="apidocSignatureSpan">(failedJob, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retryAndRemoveFailed = function (failedJob, callback){
+  var self = this;
+  self.removeFailed(failedJob, function(error, countFailed){
+    if(error){ return callback(error, failedJob); }
+    if(countFailed &#x3c; 1){ return callback(new Error(&#x27;This job is not in failed queue&#x27;), failedJob); }
+    self.enqueue(failedJob.queue, failedJob.payload[&#x27;class&#x27;], failedJob.payload.args, callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.scheduledAt" id="apidoc.element.node-resque.queue.prototype.scheduledAt">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>scheduledAt
+        <span class="apidocSignatureSpan">(q, func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scheduledAt = function (q, func, args, callback){
+  var self = this;
+  var timestamps = [];
+
+  if(arguments.length === 3 &#x26;&#x26; typeof args === &#x27;function&#x27;){
+    callback = args;
+    args = [];
+  }else if(arguments.length &#x3c; 3){
+    args = [];
+  }
+  args = arrayify(args);
+  var search = self.encode(q, func, args);
+
+  self.connection.redis.smembers(self.connection.key(&#x27;timestamps:&#x27; + search), function(error, members){
+    if(members !== null){
+      members.forEach(function(key){
+        timestamps.push(key.split(&#x27;:&#x27;)[key.split(&#x27;:&#x27;).length - 1]);
+      });
+    }
+
+    callback(error, timestamps);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.stats" id="apidoc.element.node-resque.queue.prototype.stats">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>stats
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stats = function (callback){
+  var self = this;
+  self.connection.redis.keys(self.connection.key(&#x27;stat:*&#x27;), function(error, keys){
+    if(error){ return callback(error); }
+    if(keys.length === 0){ return callback(); }
+
+    self.connection.redis.mget(keys, function(error, values){
+      if(error){ return callback(error); }
+
+      var data = {};
+      for(var i = 0; i &#x3c; keys.length; i++){
+        var k = keys[i];
+        k = k.replace(self.connection.key(&#x27;stat:&#x27;), &#x27;&#x27;);
+        data[k] = values[i];
+      }
+
+      callback(null, data);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.timestamps" id="apidoc.element.node-resque.queue.prototype.timestamps">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>timestamps
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timestamps = function (callback){
+  var self = this;
+  var results = [];
+  self.connection.redis.keys(self.connection.key(&#x27;delayed:*&#x27;), function(error, timestamps){
+    timestamps.forEach(function(timestamp){
+      var parts = timestamp.split(&#x27;:&#x27;);
+      results.push(parseInt(parts[(parts.length - 1)]) * 1000);
+    });
+    results.sort();
+    callback(error, results);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+queue.prototype.allDelayed = function(callback){
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.<span class="apidocCodeKeywordSpan">timestamps</span>(function(error, timestamps){
+if(error){ return callback(error); }
+
+timestamps.forEach(function(timestamp){
+  jobs.push(function(done){
+    self.delayedAt(timestamp, function(error, tasks, rTimestamp){
+      if(error){ return done(error); }
+      results[(rTimestamp * 1000)] = tasks;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.workers" id="apidoc.element.node-resque.queue.prototype.workers">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>workers
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workers = function (callback){
+  var self = this;
+  var workers = {};
+  self.connection.redis.smembers(self.connection.key(&#x27;workers&#x27;), function(error, results){
+    if(!error &#x26;&#x26; results){
+      results.forEach(function(r){
+        var parts = r.split(&#x27;:&#x27;);
+        var name;
+        var queues;
+        if(parts.length === 1){
+          name = parts[0];
+          workers[name] = null;
+        }
+        else if(parts.length === 2){
+          name = parts[0];
+          queues = parts[1];
+          workers[name] = queues;
+        }else{
+          name = parts.shift() + &#x27;:&#x27; + parts.shift();
+          queues = parts.join(&#x27;:&#x27;);
+          workers[name] = queues;
+        }
+      });
+    }
+
+    return callback(error, workers);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+queue.prototype.allWorkingOn = function(callback){
+  var self = this;
+  var results = {};
+  var jobs = [];
+
+  self.<span class="apidocCodeKeywordSpan">workers</span>(function(error, workers){
+if(error){ return callback(error); }
+
+Object.keys(workers).forEach(function(w){
+  jobs.push(function(done){
+    results[w] = &#x27;started&#x27;;
+    self.workingOn(w, workers[w], function(error, data){
+      if(error){ return done(error); }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queue.prototype.workingOn" id="apidoc.element.node-resque.queue.prototype.workingOn">
+        function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>workingOn
+        <span class="apidocSignatureSpan">(workerName, queues, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workingOn = function (workerName, queues, callback){
+  var self = this;
+  var fullWorkerName = workerName + &#x27;:&#x27; + queues;
+  self.connection.redis.get(self.connection.key(&#x27;worker&#x27;, fullWorkerName), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  self.workers(function(error, workers){
+if(error){ return callback(error); }
+
+Object.keys(workers).forEach(function(w){
+  jobs.push(function(done){
+    results[w] = &#x27;started&#x27;;
+    self.<span class="apidocCodeKeywordSpan">workingOn</span>(w, workers[w], function(error, data){
+      if(error){ return done(error); }
+      if(data){
+        data = JSON.parse(data);
+        results[data.worker] = data;
+      }
+      done();
+    });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.scheduler" id="apidoc.module.node-resque.scheduler">module node-resque.scheduler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.scheduler" id="apidoc.element.node-resque.scheduler.scheduler">
+        function <span class="apidocSignatureSpan">node-resque.</span>scheduler
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scheduler = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+  var defaults = self.defaults();
+
+  for(var i in defaults){
+    if(options[i] === null || options[i] === undefined){
+      options[i] = defaults[i];
+    }
+  }
+
+  self.options    = options;
+  self.name       = self.options.name;
+  self.master     = false;
+  self.running    = false;
+  self.processing = false;
+
+  self.queue = new queue({connection: options.connection}, jobs);
+
+  self.queue.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+
+var scheduler = new NR.<span class="apidocCodeKeywordSpan">scheduler</span>({connection: connectionDetails});
+scheduler.connect(function(){
+  scheduler.start();
+});
+
+/////////////////////////
+// REGESTER FOR EVENTS //
+/////////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.super_" id="apidoc.element.node-resque.scheduler.super_">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.scheduler.prototype" id="apidoc.module.node-resque.scheduler.prototype">module node-resque.scheduler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.cleanupTimestamp" id="apidoc.element.node-resque.scheduler.prototype.cleanupTimestamp">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>cleanupTimestamp
+        <span class="apidocSignatureSpan">(timestamp, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanupTimestamp = function (timestamp, callback){
+  var self = this;
+  var key = self.connection.key(&#x27;delayed:&#x27; + timestamp);
+  self.connection.redis.llen(key, function(error, len){
+    if(error){ return callback(error); }
+    if(len === 0){
+      self.connection.redis.del(key, function(error){
+        if(error){ return callback(error); }
+        self.connection.redis.zrem(self.connection.key(&#x27;delayed_queue_schedule&#x27;), timestamp, function(error){
+          return callback(error);
+        });
+      });
+    }
+    else{ return callback(); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this;
+var key = self.connection.key(&#x27;delayed:&#x27; + timestamp);
+self.connection.redis.lpop(key, function(error, job){
+  if(error){
+    return callback(error);
+  }else{
+    self.connection.redis.srem(self.connection.key(&#x27;timestamps:&#x27; + job), (&#x27;delayed:&#x27; + timestamp), function(
+error){
+      self.<span class="apidocCodeKeywordSpan">cleanupTimestamp</span>(timestamp, function(){
+        if(error){
+          return callback(error);
+        }else{
+          return callback(null, JSON.parse(job));
+        }
+      });
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.connect" id="apidoc.element.node-resque.scheduler.prototype.connect">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback){
+  var self = this;
+  self.queue.connect(function(){
+    self.connection = self.queue.connection;
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.<span class="apidocCodeKeywordSpan">connect</span>(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.defaults" id="apidoc.element.node-resque.scheduler.prototype.defaults">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (){
+  var self = this;
+  return {
+    timeout:           5000,   // in ms
+    masterLockTimeout: 60 * 3, // in seconds
+    name:              os.hostname() + &#x27;:&#x27; + process.pid, // assumes only one worker per node process
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var util  = require(&#x27;util&#x27;);
+var async = require(&#x27;async&#x27;);
+var EventEmitter = require(&#x27;events&#x27;).EventEmitter;
+
+var connection = function(options){
+var self = this;
+var defaults = self.<span class="apidocCodeKeywordSpan">defaults</span>();
+
+if(!options){ options = {}; }
+for(var i in defaults){
+  if(options[i] === null || options[i] === undefined){
+    options[i] = defaults[i];
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.end" id="apidoc.element.node-resque.scheduler.prototype.end">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>end
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (callback){
+  var self = this;
+  self.running = false;
+  clearTimeout(self.timer);
+
+  if(self.processing === false){
+    self.releaseMasterLock(function(error, wasMaster){
+      if(error){ self.emit(&#x27;error&#x27;, error); }
+      self.queue.end(function(){
+        self.emit(&#x27;end&#x27;);
+        process.nextTick(function(){
+          if(typeof callback === &#x27;function&#x27;){ callback(); }
+        });
+      });
+    });
+  }
+
+  else{
+    setTimeout(function(){
+      self.end(callback);
+    }, (self.options.timeout / 2));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+worker.connect(function(){
+  worker.start();
+});
+```
+
+## Notes
+- Be sure to call `worker.<span class="apidocCodeKeywordSpan">end</span>(callback)`, `queue.end(callback)` and `scheduler.end(callback
+)` before shutting down your application if you want to properly clear your worker status from resque
+- When ending your application, be sure to allow your workers time to finish what they are working on
+- This project implements the &#x22;scheduler&#x22; part of rescue-scheduler (the daemon which can promote enqueued delayed jobs
+ into the work queues when it is time), but not the CRON scheduler proxy.  To learn more about how to use a CRON-like scheduler,
+read the [Job Schedules](#job-schedules) section of this document.
+- If you are using any plugins which effect `beforeEnqueue` or `afterEnqueue`, be sure to pass the `jobs` argument to the `new Queue
+` constructor
+- If a job fails, it will be added to a special `failed` queue.  You can then inspect these jobs, write a plugin to manage them,
+move them back to the normal queues, etc.  Failure behavior by default is just to enter the `failed` queue, but there are many options
+.  Check out these examples from the ruby ecosystem for inspiration:
+  - https://github.com/lantins/resque-retry
+  - https://github.com/resque/resque/wiki/Failure-Backends
+- If you plan to run more than one worker per nodejs process, be sure to name them something distinct.  Names **must** follow the
+ pattern `hostname:pid+unique_id`.  For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.enqueueDelayedItemsForTimestamp" id="apidoc.element.node-resque.scheduler.prototype.enqueueDelayedItemsForTimestamp">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>enqueueDelayedItemsForTimestamp
+        <span class="apidocSignatureSpan">(timestamp, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enqueueDelayedItemsForTimestamp = function (timestamp, callback){
+  var self = this;
+  self.nextItemForTimestamp(timestamp, function(error, job){
+    if(!error &#x26;&#x26; job){
+      self.transfer(timestamp, job, function(){
+        self.enqueueDelayedItemsForTimestamp(timestamp, callback);
+      });
+    }else{
+      return callback(error);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  self.master = true;
+  self.emit(&#x27;master&#x27;);
+}
+self.emit(&#x27;poll&#x27;);
+self.nextDelayedTimestamp(function(error, timestamp){
+  if(!error &#x26;&#x26; timestamp){
+    self.emit(&#x27;working_timestamp&#x27;, timestamp);
+    self.<span class="apidocCodeKeywordSpan">enqueueDelayedItemsForTimestamp</span>(timestamp, function(error){
+      if(error){ self.emit(&#x27;error&#x27;, error); }
+      self.poll(callback);
+    });
+  }else{
+    if(error){ self.emit(&#x27;error&#x27;, error); }
+    self.processing = false;
+    self.pollAgainLater();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.masterKey" id="apidoc.element.node-resque.scheduler.prototype.masterKey">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>masterKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">masterKey = function (){
+  var self = this;
+  return self.connection.key(&#x27;resque_scheduler_master_lock&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+scheduler.prototype.tryForMaster = function(callback){
+var self = this;
+
+if(!self.connection || !self.connection.redis){
+  return callback();
+}
+
+self.connection.redis.setnx(self.<span class="apidocCodeKeywordSpan">masterKey</span>(), self.options.name, function(error, locked
+){
+  if(error){ return callback(error); }
+  else if(locked === true || locked === 1){
+    self.connection.redis.expire(self.masterKey(), self.options.masterLockTimeout, function(error){
+      return callback(error, true);
+    });
+  }else{
+    self.connection.redis.get(self.masterKey(), function(error, value){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.nextDelayedTimestamp" id="apidoc.element.node-resque.scheduler.prototype.nextDelayedTimestamp">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>nextDelayedTimestamp
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nextDelayedTimestamp = function (callback){
+  var self = this;
+  var time = Math.round(new Date().getTime() / 1000);
+  self.connection.redis.zrangebyscore(self.connection.key(&#x27;delayed_queue_schedule&#x27;), &#x27;-inf&#x27;, time, &#x27;limit&#x27;, 0, 1, function(error
+, items){
+    if(error || items === null || items.length === 0){
+      return callback(error);
+    }else{
+      return callback(null, items[0]);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if(error){ self.emit(&#x27;error&#x27;, error); }
+if(isMaster){
+  if(!self.master){
+    self.master = true;
+    self.emit(&#x27;master&#x27;);
+  }
+  self.emit(&#x27;poll&#x27;);
+  self.<span class="apidocCodeKeywordSpan">nextDelayedTimestamp</span>(function(error, timestamp){
+    if(!error &#x26;&#x26; timestamp){
+      self.emit(&#x27;working_timestamp&#x27;, timestamp);
+      self.enqueueDelayedItemsForTimestamp(timestamp, function(error){
+        if(error){ self.emit(&#x27;error&#x27;, error); }
+        self.poll(callback);
+      });
+    }else{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.nextItemForTimestamp" id="apidoc.element.node-resque.scheduler.prototype.nextItemForTimestamp">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>nextItemForTimestamp
+        <span class="apidocSignatureSpan">(timestamp, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nextItemForTimestamp = function (timestamp, callback){
+  var self = this;
+  var key = self.connection.key(&#x27;delayed:&#x27; + timestamp);
+  self.connection.redis.lpop(key, function(error, job){
+    if(error){
+      return callback(error);
+    }else{
+      self.connection.redis.srem(self.connection.key(&#x27;timestamps:&#x27; + job), (&#x27;delayed:&#x27; + timestamp), function(error){
+        self.cleanupTimestamp(timestamp, function(){
+          if(error){
+            return callback(error);
+          }else{
+            return callback(null, JSON.parse(job));
+          }
+        });
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return callback(null, items[0]);
+  }
+});
+};
+
+scheduler.prototype.enqueueDelayedItemsForTimestamp = function(timestamp, callback){
+var self = this;
+self.<span class="apidocCodeKeywordSpan">nextItemForTimestamp</span>(timestamp, function(error, job){
+  if(!error &#x26;&#x26; job){
+    self.transfer(timestamp, job, function(){
+      self.enqueueDelayedItemsForTimestamp(timestamp, callback);
+    });
+  }else{
+    return callback(error);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.poll" id="apidoc.element.node-resque.scheduler.prototype.poll">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>poll
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function (callback){
+  var self = this;
+  self.processing = true;
+  clearTimeout(self.timer);
+  self.tryForMaster(function(error, isMaster){
+    if(error){ self.emit(&#x27;error&#x27;, error); }
+    if(isMaster){
+      if(!self.master){
+        self.master = true;
+        self.emit(&#x27;master&#x27;);
+      }
+      self.emit(&#x27;poll&#x27;);
+      self.nextDelayedTimestamp(function(error, timestamp){
+        if(!error &#x26;&#x26; timestamp){
+          self.emit(&#x27;working_timestamp&#x27;, timestamp);
+          self.enqueueDelayedItemsForTimestamp(timestamp, function(error){
+            if(error){ self.emit(&#x27;error&#x27;, error); }
+            self.poll(callback);
+          });
+        }else{
+          if(error){ self.emit(&#x27;error&#x27;, error); }
+          self.processing = false;
+          self.pollAgainLater();
+          if(typeof callback === &#x27;function&#x27;){ callback(); }
+        }
+      });
+    }else{
+      self.master = false;
+      self.processing = false;
+      self.pollAgainLater();
+      if(typeof callback === &#x27;function&#x27;){ callback(); }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this;
+self.processing = false;
+
+if(!self.running){
+  self.emit(&#x27;start&#x27;);
+  self.running = true;
+  self.timer = setTimeout((function(){
+    self.<span class="apidocCodeKeywordSpan">poll</span>();
+  }), self.options.timeout);
+}
+};
+
+scheduler.prototype.end = function(callback){
+var self = this;
+self.running = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.pollAgainLater" id="apidoc.element.node-resque.scheduler.prototype.pollAgainLater">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>pollAgainLater
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pollAgainLater = function (){
+  var self = this;
+  if(self.running === true){
+    self.timer = setTimeout(function(){
+      self.poll();
+    }, self.options.timeout);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      self.enqueueDelayedItemsForTimestamp(timestamp, function(error){
+        if(error){ self.emit(&#x27;error&#x27;, error); }
+        self.poll(callback);
+      });
+    }else{
+      if(error){ self.emit(&#x27;error&#x27;, error); }
+      self.processing = false;
+      self.<span class="apidocCodeKeywordSpan">pollAgainLater</span>();
+      if(typeof callback === &#x27;function&#x27;){ callback(); }
+    }
+  });
+}else{
+  self.master = false;
+  self.processing = false;
+  self.pollAgainLater();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.releaseMasterLock" id="apidoc.element.node-resque.scheduler.prototype.releaseMasterLock">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>releaseMasterLock
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">releaseMasterLock = function (callback){
+  var self = this;
+  if(self.connection){
+    self.tryForMaster(function(error, isMaster){
+      if(error){ return callback(error); }
+      else if(!isMaster){ return callback(null, false); }
+      else{
+        self.connection.redis.del(self.masterKey(), function(error, delted){
+          self.master = false;
+          return callback(error, (delted === 1));
+        });
+      }
+    });
+  }else{
+    return callback();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+scheduler.prototype.end = function(callback){
+var self = this;
+self.running = false;
+clearTimeout(self.timer);
+
+if(self.processing === false){
+  self.<span class="apidocCodeKeywordSpan">releaseMasterLock</span>(function(error, wasMaster){
+    if(error){ self.emit(&#x27;error&#x27;, error); }
+    self.queue.end(function(){
+      self.emit(&#x27;end&#x27;);
+      process.nextTick(function(){
+        if(typeof callback === &#x27;function&#x27;){ callback(); }
+      });
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.start" id="apidoc.element.node-resque.scheduler.prototype.start">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (){
+  var self = this;
+  self.processing = false;
+
+  if(!self.running){
+    self.emit(&#x27;start&#x27;);
+    self.running = true;
+    self.timer = setTimeout((function(){
+      self.poll();
+    }), self.options.timeout);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.<span class="apidocCodeKeywordSpan">start</span>();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+
+var scheduler = new NR.scheduler({connection: connectionDetails});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.transfer" id="apidoc.element.node-resque.scheduler.prototype.transfer">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>transfer
+        <span class="apidocSignatureSpan">(timestamp, job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transfer = function (timestamp, job, callback){
+  var self = this;
+  self.queue.enqueue(job.queue, job[&#x27;class&#x27;], job.args, function(error){
+    if(error){ self.emit(&#x27;error&#x27;, error); }
+    self.emit(&#x27;transferred_job&#x27;, timestamp, job);
+    return callback();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+};
+
+scheduler.prototype.enqueueDelayedItemsForTimestamp = function(timestamp, callback){
+  var self = this;
+  self.nextItemForTimestamp(timestamp, function(error, job){
+    if(!error &#x26;&#x26; job){
+      self.<span class="apidocCodeKeywordSpan">transfer</span>(timestamp, job, function(){
+        self.enqueueDelayedItemsForTimestamp(timestamp, callback);
+      });
+    }else{
+      return callback(error);
+    }
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.scheduler.prototype.tryForMaster" id="apidoc.element.node-resque.scheduler.prototype.tryForMaster">
+        function <span class="apidocSignatureSpan">node-resque.scheduler.prototype.</span>tryForMaster
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tryForMaster = function (callback){
+  var self = this;
+
+  if(!self.connection || !self.connection.redis){
+    return callback();
+  }
+
+  self.connection.redis.setnx(self.masterKey(), self.options.name, function(error, locked){
+    if(error){ return callback(error); }
+    else if(locked === true || locked === 1){
+      self.connection.redis.expire(self.masterKey(), self.options.masterLockTimeout, function(error){
+        return callback(error, true);
+      });
+    }else{
+      self.connection.redis.get(self.masterKey(), function(error, value){
+        if(error){ return callback(error); }
+        else if(value === self.options.name){
+          self.connection.redis.expire(self.masterKey(), self.options.masterLockTimeout, function(error){
+            return callback(error, true);
+          });
+        }else{
+          return callback(null, false);
+        }
+      });
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+};
+
+scheduler.prototype.poll = function(callback){
+var self = this;
+self.processing = true;
+clearTimeout(self.timer);
+self.<span class="apidocCodeKeywordSpan">tryForMaster</span>(function(error, isMaster){
+  if(error){ self.emit(&#x27;error&#x27;, error); }
+  if(isMaster){
+    if(!self.master){
+      self.master = true;
+      self.emit(&#x27;master&#x27;);
+    }
+    self.emit(&#x27;poll&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.worker" id="apidoc.module.node-resque.worker">module node-resque.worker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.worker" id="apidoc.element.node-resque.worker.worker">
+        function <span class="apidocSignatureSpan">node-resque.</span>worker
+        <span class="apidocSignatureSpan">(options, jobs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">worker = function (options, jobs){
+  var self = this;
+  if(!jobs){ jobs = {}; }
+
+  var defaults = self.defaults();
+  for(var i in defaults){
+    if(options[i] === undefined || options[i] === null){
+      options[i] = defaults[i];
+    }
+  }
+
+  self.options = options;
+  self.jobs = prepareJobs(jobs);
+  self.name = self.options.name;
+  self.queues = self.options.queues;
+  self.error = null;
+  self.result = null;
+  self.ready = false;
+  self.running = false;
+  self.working = false;
+  self.job = null;
+
+  self.queueObject = new queue({connection: options.connection}, self.jobs);
+
+  self.queueObject.on(&#x27;error&#x27;, function(error){
+    self.emit(&#x27;error&#x27;, null, null, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.<span class="apidocCodeKeywordSpan">worker</span>({connection: connectionDetails, queues: [&#x27;math&#x27;, &#
+x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.super_" id="apidoc.element.node-resque.worker.super_">
+        function <span class="apidocSignatureSpan">node-resque.worker.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.worker.prototype" id="apidoc.module.node-resque.worker.prototype">module node-resque.worker.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.checkQueues" id="apidoc.element.node-resque.worker.prototype.checkQueues">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>checkQueues
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkQueues = function (callback){
+  var self = this;
+  if(typeof self.queues === &#x27;string&#x27;){
+    self.queues = [self.queues];
+  }
+  if(self.ready === true &#x26;&#x26; self.queues.length &#x3e; 0 &#x26;&#x26; self.queues.shift){
+    return;
+  }
+
+  if((self.queues[0] === &#x27;*&#x27; &#x26;&#x26; self.queues.length === 1) || self.queues.length === 0){
+    self.originalQueue = &#x27;*&#x27;;
+    self.untrack(self.name, self.stringQueues(), function(error){
+      if(error){
+        self.emit(&#x27;error&#x27;, null, null, error);
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+        return;
+      }
+
+      self.connection.redis.smembers(self.connection.key(&#x27;queues&#x27;), function(error, resp){
+        if(error){
+          self.emit(&#x27;error&#x27;, null, null, error);
+          if(typeof callback === &#x27;function&#x27;){ callback(error); }
+          return;
+        }
+
+        self.queues = resp ? resp.sort() : [];
+        self.track(function(error){
+          if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+          self.ready = true;
+          if(typeof callback === &#x27;function&#x27;){ callback(error); }
+        });
+      });
+    });
+  }else{
+    if(self.queues instanceof String){ self.queues = self.queues.split(&#x27;,&#x27;); }
+    self.ready = true;
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+};
+
+worker.prototype.connect = function(callback){
+var self = this;
+self.queueObject.connect(function(){
+  self.connection = self.queueObject.connection;
+  self.<span class="apidocCodeKeywordSpan">checkQueues</span>(function(){
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  });
+});
+};
+
+worker.prototype.start = function(){
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.completeJob" id="apidoc.element.node-resque.worker.prototype.completeJob">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>completeJob
+        <span class="apidocSignatureSpan">(toRespond, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completeJob = function (toRespond, callback){
+  var self = this;
+  var job = self.job;
+  var jobs = [];
+
+  if(self.error){
+    jobs.push(function(done){
+      self.fail(self.error, done);
+    });
+  }else if(toRespond){
+    jobs.push(function(done){
+      self.succeed(job, done);
+    });
+  }
+
+  jobs.push(function(done){
+    self.doneWorking(done);
+  });
+
+  async.series(jobs, function(error){
+    if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+    self.job = null;
+
+    if(self.options.looping){
+      return self.poll();
+    }else if(typeof callback === &#x27;function&#x27;){
+      return callback(error);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var self = this;
+  var returnCounter = 0; // a state counter to prevent multiple returns from poor jobs or plugins
+  var callbackError = new Error(&#x27;refusing to continue with job, multiple callbacks detected&#x27;);
+  self.job = job;
+  self.error = null;
+  if(!self.jobs[job[&#x27;class&#x27;]]){
+self.error = new Error(&#x27;No job defined for class &#x22;&#x27; + job[&#x27;class&#x27;] + &#x27;&#x22;&#x27;);
+self.<span class="apidocCodeKeywordSpan">completeJob</span>(true, callback);
+  }else{
+var cb = self.jobs[job[&#x27;class&#x27;]].perform;
+self.emit(&#x27;job&#x27;, self.queue, job);
+
+if(cb){
+  pluginRunner.runPlugins(self, &#x27;before_perform&#x27;, job[&#x27;class&#x27;], self.queue, self.jobs[job[&#x27;class&#x27;]],
+job.args, function(err, toRun){
+    returnCounter++;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.connect" id="apidoc.element.node-resque.worker.prototype.connect">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback){
+  var self = this;
+  self.queueObject.connect(function(){
+    self.connection = self.queueObject.connection;
+    self.checkQueues(function(){
+      if(typeof callback === &#x27;function&#x27;){ callback(); }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.<span class="apidocCodeKeywordSpan">connect</span>(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.defaults" id="apidoc.element.node-resque.worker.prototype.defaults">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (){
+  var self = this;
+  return {
+    name:      os.hostname() + &#x27;:&#x27; + process.pid, // assumes only one worker per node process
+    queues:    &#x27;*&#x27;,
+    timeout:   5000,
+    looping:   true,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var util  = require(&#x27;util&#x27;);
+var async = require(&#x27;async&#x27;);
+var EventEmitter = require(&#x27;events&#x27;).EventEmitter;
+
+var connection = function(options){
+var self = this;
+var defaults = self.<span class="apidocCodeKeywordSpan">defaults</span>();
+
+if(!options){ options = {}; }
+for(var i in defaults){
+  if(options[i] === null || options[i] === undefined){
+    options[i] = defaults[i];
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.doneWorking" id="apidoc.element.node-resque.worker.prototype.doneWorking">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>doneWorking
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doneWorking = function (callback){
+  var self = this;
+  self.working = false;
+  self.connection.redis.del(self.connection.key(&#x27;worker&#x27;, self.name, self.stringQueues()), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }else if(toRespond){
+jobs.push(function(done){
+  self.succeed(job, done);
+});
+  }
+
+  jobs.push(function(done){
+self.<span class="apidocCodeKeywordSpan">doneWorking</span>(done);
+  });
+
+  async.series(jobs, function(error){
+if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+self.job = null;
+
+if(self.options.looping){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.end" id="apidoc.element.node-resque.worker.prototype.end">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>end
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (callback){
+  var self = this;
+  self.running = false;
+  if(self.working === true){
+    setTimeout(function(){
+      self.end(callback);
+    }, self.options.timeout);
+  }else{
+    self.untrack(self.name, self.stringQueues(), function(error){
+      self.queueObject.end(function(error){
+        self.emit(&#x27;end&#x27;);
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      });
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+worker.connect(function(){
+  worker.start();
+});
+```
+
+## Notes
+- Be sure to call `worker.<span class="apidocCodeKeywordSpan">end</span>(callback)`, `queue.end(callback)` and `scheduler.end(callback
+)` before shutting down your application if you want to properly clear your worker status from resque
+- When ending your application, be sure to allow your workers time to finish what they are working on
+- This project implements the &#x22;scheduler&#x22; part of rescue-scheduler (the daemon which can promote enqueued delayed jobs
+ into the work queues when it is time), but not the CRON scheduler proxy.  To learn more about how to use a CRON-like scheduler,
+read the [Job Schedules](#job-schedules) section of this document.
+- If you are using any plugins which effect `beforeEnqueue` or `afterEnqueue`, be sure to pass the `jobs` argument to the `new Queue
+` constructor
+- If a job fails, it will be added to a special `failed` queue.  You can then inspect these jobs, write a plugin to manage them,
+move them back to the normal queues, etc.  Failure behavior by default is just to enter the `failed` queue, but there are many options
+.  Check out these examples from the ruby ecosystem for inspiration:
+  - https://github.com/lantins/resque-retry
+  - https://github.com/resque/resque/wiki/Failure-Backends
+- If you plan to run more than one worker per nodejs process, be sure to name them something distinct.  Names **must** follow the
+ pattern `hostname:pid+unique_id`.  For example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.fail" id="apidoc.element.node-resque.worker.prototype.fail">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>fail
+        <span class="apidocSignatureSpan">(err, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail = function (err, callback){
+  var self = this;
+  var jobs = [];
+  var failingJob = self.job;
+
+  jobs.push(function(done){
+    self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;), done);
+  });
+
+  jobs.push(function(done){
+    self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;, self.name), done);
+  });
+
+  jobs.push(function(done){
+    self.connection.redis.rpush(self.connection.key(&#x27;failed&#x27;), JSON.stringify(self.failurePayload(err, failingJob)), done);
+  });
+
+  async.series(jobs, function(error){
+    if(error){
+      self.emit(&#x27;error&#x27;, null, null, error);
+      if(typeof callback === &#x27;function&#x27;){ return callback(error); }
+    }else{
+      self.emit(&#x27;failure&#x27;, self.queue, failingJob, err);
+      if(typeof callback === &#x27;function&#x27;){ return callback(); }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- callback(error, failedJobs)
+- `failedJobs` is an array listing the data of the failed jobs.  Each element looks like:
+
+### Failing a Job
+
+It is *very* important that your jobs handle uncaughtRejections and other errors of this type properly.  As of `node-resque` version
+ 4, we no longer use `domains` to catch what would otherwise be crash-inducing errors in your jobs.  This means that a job which
+ causes your application to crash WILL BE LOST FOREVER.  Please use `catch()` on your promises, handle all of your callbacks, and
+ otherwise write robust node.js applications.
+
+If you choose to use `domains`, `process.onExit`, or any other method of &#x22;catching&#x22; a process crash, you can still move
+ the job `node-resque` was working on to the redis error queue with `worker.<span class="apidocCodeKeywordSpan">fail</span>(error
+, callback)`.
+
+```javascript
+{ worker: &#x27;busted-worker-3&#x27;,
+queue: &#x27;busted-queue&#x27;,
+payload: { class: &#x27;busted_job&#x27;, queue: &#x27;busted-queue&#x27;, args: [ 1, 2, 3 ] },
+exception: &#x27;ERROR_NAME&#x27;,
+error: &#x27;I broke&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.failurePayload" id="apidoc.element.node-resque.worker.prototype.failurePayload">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>failurePayload
+        <span class="apidocSignatureSpan">(err, job)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">failurePayload = function (err, job){
+  var self = this;
+  return {
+    worker: self.name,
+    queue: self.queue,
+    payload: job,
+    exception: err.name,
+    error: err.message,
+    backtrace: err.stack ? err.stack.split(&#x27;\n&#x27;).slice(1) : null,
+    failed_at: (new Date()).toString()
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+jobs.push(function(done){
+  self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;, self.name), done);
+});
+
+jobs.push(function(done){
+  self.connection.redis.rpush(self.connection.key(&#x27;failed&#x27;), JSON.stringify(self.<span class="apidocCodeKeywordSpan">failurePayload
+</span>(err, failingJob)), done);
+});
+
+async.series(jobs, function(error){
+  if(error){
+    self.emit(&#x27;error&#x27;, null, null, error);
+    if(typeof callback === &#x27;function&#x27;){ return callback(error); }
+  }else{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.getPids" id="apidoc.element.node-resque.worker.prototype.getPids">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>getPids
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPids = function (callback){
+  var cmd;
+  if(process.platform === &#x27;win32&#x27;){
+    cmd = &#x27;for /f &#x22;usebackq tokens=2 skip=2&#x22; %i in (`tasklist /nh`) do @echo %i&#x27;;
+  }else{
+    cmd = &#x27;ps -ef | awk \&#x27;{print $2}\&#x27;&#x27;;
+  }
+
+  var child = exec(cmd, function(error, stdout, stderr){
+    var pids = [];
+    stdout.split(&#x27;\n&#x27;).forEach(function(line){
+      line = line.trim();
+      if(line.length &#x3e; 0){
+        var pid = parseInt(line.split(&#x27; &#x27;)[0]);
+        if(!isNaN(pid)){ pids.push(pid); }
+      }
+    });
+
+    if(!error &#x26;&#x26; stderr){ error = stderr; }
+    callback(error, pids);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+  });
+};
+
+worker.prototype.workerCleanup = function(callback){
+  var self = this;
+  var jobs = [];
+  self.<span class="apidocCodeKeywordSpan">getPids</span>(function(error, pids){
+if(error){
+  self.emit(&#x27;error&#x27;, null, null, error);
+  if(typeof callback === &#x27;function&#x27;){ callback(error); }
+  return;
+}
+
+self.connection.redis.smembers(self.connection.key(&#x27;workers&#x27;), function(error, workers){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.init" id="apidoc.element.node-resque.worker.prototype.init">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>init
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (callback){
+  var self = this;
+  var args;
+  var _ref;
+  self.track(function(error){
+    if(error){
+      self.emit(&#x27;error&#x27;, null, null, error);
+      if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      return;
+    }
+
+    self.connection.redis.set(self.connection.key(&#x27;worker&#x27;, self.name, self.stringQueues(), &#x27;started&#x27;), Math.round((new Date()).
+getTime() / 1000), function(error){
+      if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+      if(typeof callback === &#x27;function&#x27;){ callback(error); }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+};
+
+worker.prototype.start = function(){
+var self = this;
+if(self.ready){
+  self.emit(&#x27;start&#x27;);
+  self.<span class="apidocCodeKeywordSpan">init</span>(function(){
+    self.poll();
+  });
+}
+};
+
+worker.prototype.end = function(callback){
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.pause" id="apidoc.element.node-resque.worker.prototype.pause">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function (){
+  var self = this;
+  self.emit(&#x27;pause&#x27;);
+  setTimeout(function(){
+    if(!self.running){ return; }
+    self.poll();
+  }, self.options.timeout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if(!self.running){
+  if(typeof callback === &#x27;function&#x27;){ callback(); }
+}else{
+  self.queue = self.queues[nQueue];
+  self.emit(&#x27;poll&#x27;, self.queue);
+  if(self.queue === null || self.queue === undefined){
+    self.checkQueues(function(){
+      self.<span class="apidocCodeKeywordSpan">pause</span>();
+    });
+  }else if(self.working === true){
+    var error = new Error(&#x27;refusing to get new job, already working&#x27;);
+    self.emit(&#x27;error&#x27;, self.queue, null, error);
+  }else{
+    self.working = true;
+    self.connection.redis.lpop(self.connection.key(&#x27;queue&#x27;, self.queue), function(error, resp){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.perform" id="apidoc.element.node-resque.worker.prototype.perform">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>perform
+        <span class="apidocSignatureSpan">(job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">perform = function (job, callback){
+  var self = this;
+  var returnCounter = 0; // a state counter to prevent multiple returns from poor jobs or plugins
+  var callbackError = new Error(&#x27;refusing to continue with job, multiple callbacks detected&#x27;);
+  self.job = job;
+  self.error = null;
+  if(!self.jobs[job[&#x27;class&#x27;]]){
+    self.error = new Error(&#x27;No job defined for class &#x22;&#x27; + job[&#x27;class&#x27;] + &#x27;&#x22;&#x27;);
+    self.completeJob(true, callback);
+  }else{
+    var cb = self.jobs[job[&#x27;class&#x27;]].perform;
+    self.emit(&#x27;job&#x27;, self.queue, job);
+
+    if(cb){
+      pluginRunner.runPlugins(self, &#x27;before_perform&#x27;, job[&#x27;class&#x27;], self.queue, self.jobs[job[&#x27;class&#x27;]], job.args, function(err,
+toRun){
+        returnCounter++;
+        if(returnCounter !== 1){
+          self.emit(&#x27;failure&#x27;, self.queue, job, callbackError);
+        }else if(toRun === false){
+          self.completeJob(false, callback);
+        }else{
+          self.error = err;
+          self.workingOn(job);
+          var args;
+          if(job.args === undefined || (job.args instanceof Array) === true){
+            args = job.args;
+          }else{
+            args = [job.args];
+          }
+
+          var combinedInputs = [].slice.call(args).concat([function(err, result){
+            returnCounter++;
+            if(returnCounter !== 2){
+              self.emit(&#x27;failure&#x27;, self.queue, job, callbackError);
+            }else{
+              self.error = err;
+              self.result = result;
+              pluginRunner.runPlugins(self, &#x27;after_perform&#x27;, job[&#x27;class&#x27;], self.queue, self.jobs[job[&#x27;class&#x27;]], job.args, function
+(e, toRun){
+                if(self.error === undefined &#x26;&#x26; e){ self.error = e; }
+                returnCounter++;
+                if(returnCounter !== 3){
+                  self.emit(&#x27;failure&#x27;, self.queue, job, callbackError);
+                }else{
+                  self.completeJob(true, callback);
+                }
+              });
+            }
+          }]);
+
+          // When returning the payload back to redis (on error), it is important that the orignal payload is preserved
+          // To help with this, we can stry to make the inputs to the job immutible
+          // https://github.com/taskrabbit/node-resque/issues/99
+          // Note: if an input is a string or a number, you CANNOT freeze it saddly.
+          for(var i in combinedInputs){
+            if((typeof combinedInputs[i] === &#x27;object&#x27;) &#x26;&#x26; (combinedInputs[i] !== null)){
+              Object.freeze(combinedInputs[i]);
+            }
+          }
+
+          cb.apply(self, combinedInputs);
+        }
+      });
+
+    }else{
+
+      self.error = new Error(&#x27;Missing Job: &#x27; + job[&#x27;class&#x27;]);
+      self.completeJob(true, callback);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }else{
+self.working = true;
+self.connection.redis.lpop(self.connection.key(&#x27;queue&#x27;, self.queue), function(error, resp){
+  if(!error &#x26;&#x26; resp){
+    var currentJob = JSON.parse(resp.toString());
+    if(self.options.looping){
+      self.result = null;
+      self.<span class="apidocCodeKeywordSpan">perform</span>(currentJob);
+    }else{
+      if(typeof callback === &#x27;function&#x27;){ callback(currentJob); }
+    }
+  }else{
+    if(error){
+      self.emit(&#x27;error&#x27;, self.queue, null, error);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.performInline" id="apidoc.element.node-resque.worker.prototype.performInline">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>performInline
+        <span class="apidocSignatureSpan">(func, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">performInline = function (func, args, callback){
+  var self          = this;
+  var q             = &#x27;_direct-queue-&#x27; + self.name;
+  var returnCounter = 0; // a state counter to prevent multiple returns from poor jobs or plugins
+  var callbackError = new Error(&#x27;refusing to continue with job, multiple callbacks detected&#x27;);
+
+  if(args !== undefined &#x26;&#x26; args !== null &#x26;&#x26; args instanceof Array !== true){
+    args = [args];
+  }
+
+  if(!self.jobs[func]){         return callback(new Error(&#x27;No job defined for class &#x22;&#x27; + func + &#x27;&#x22;&#x27;)); }
+  if(!self.jobs[func].perform){ return callback(new Error(&#x27;Missing Job: &#x27; + func));                    }
+
+  pluginRunner.runPlugins(self, &#x27;before_perform&#x27;, func, q, self.jobs[func], args, function(err, toRun){
+    returnCounter++;
+    if(err){ return callback(err); }
+    if(returnCounter !== 1){ return callback(callbackError); }
+    if(toRun === false){ return callback(); }
+
+    var combinedInputs = [].slice.call(args).concat([function(err, result){
+      self.result = result;
+      self.error = err;
+      returnCounter++;
+      if(err){ return callback(err); }
+      if(returnCounter !== 2){ return callback(callbackError); }
+
+      pluginRunner.runPlugins(self, &#x27;after_perform&#x27;, func, q, self.jobs[func], args, function(err, toRun){
+        returnCounter++;
+        if(err){ return callback(err); }
+        if(returnCounter !== 3){ return callback(callbackError); }
+        return callback(null, result);
+      });
+    }]);
+
+    self.jobs[func].perform.apply(self, combinedInputs);
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var name = os.hostname() + &#x22;:&#x22; + process.pid + &#x22;+&#x22; + counter;
+var worker = new NR.worker({connection: connectionDetails, queues: &#x27;math&#x27;, &#x27;name&#x27; : name}, jobs);
+```
+
+###  worker#performInline
+
+**DO NOT USE THIS IN PRODUCTION**. In tests or special cases, you may want to process/work a job in-line. To do so, you can use `
+worker.<span class="apidocCodeKeywordSpan">performInline</span>(jobName, arguments, callback)`.  If you are planning on running
+a job via #performInline, this worker should also not be started, nor should be using event emitters to monitor this worker.  This
+ method will also not write to redis at all, including logging errors, modify resque&#x27;s stats, etc.
+
+## Queue Management
+
+Additional methods provided on the `queue` object:
+
+- **queue.stats** = function(callback)
+- callback(error, stats_from_your_cluster)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.poll" id="apidoc.element.node-resque.worker.prototype.poll">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>poll
+        <span class="apidocSignatureSpan">(nQueue, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function (nQueue, callback){
+  var self = this;
+  if(nQueue === null || nQueue === undefined){
+    nQueue = 0;
+  }
+  if(!self.running){
+    if(typeof callback === &#x27;function&#x27;){ callback(); }
+  }else{
+    self.queue = self.queues[nQueue];
+    self.emit(&#x27;poll&#x27;, self.queue);
+    if(self.queue === null || self.queue === undefined){
+      self.checkQueues(function(){
+        self.pause();
+      });
+    }else if(self.working === true){
+      var error = new Error(&#x27;refusing to get new job, already working&#x27;);
+      self.emit(&#x27;error&#x27;, self.queue, null, error);
+    }else{
+      self.working = true;
+      self.connection.redis.lpop(self.connection.key(&#x27;queue&#x27;, self.queue), function(error, resp){
+        if(!error &#x26;&#x26; resp){
+          var currentJob = JSON.parse(resp.toString());
+          if(self.options.looping){
+            self.result = null;
+            self.perform(currentJob);
+          }else{
+            if(typeof callback === &#x27;function&#x27;){ callback(currentJob); }
+          }
+        }else{
+          if(error){
+            self.emit(&#x27;error&#x27;, self.queue, null, error);
+          }
+          self.working = false;
+          if(nQueue === self.queues.length - 1){
+            process.nextTick(function(){
+              if(self.options.looping){
+                self.pause();
+              }else{
+                if(typeof callback === &#x27;function&#x27;){ callback(); }
+              }
+            });
+          }else{
+            process.nextTick(function(){
+              self.poll(nQueue + 1, callback);
+            });
+          }
+        }
+      });
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var self = this;
+self.processing = false;
+
+if(!self.running){
+  self.emit(&#x27;start&#x27;);
+  self.running = true;
+  self.timer = setTimeout((function(){
+    self.<span class="apidocCodeKeywordSpan">poll</span>();
+  }), self.options.timeout);
+}
+};
+
+scheduler.prototype.end = function(callback){
+var self = this;
+self.running = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.start" id="apidoc.element.node-resque.worker.prototype.start">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (){
+  var self = this;
+  if(self.ready){
+    self.emit(&#x27;start&#x27;);
+    self.init(function(){
+      self.poll();
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.workerCleanup(); // optional: cleanup any previous improperly shutdown workers on this host
+  worker.<span class="apidocCodeKeywordSpan">start</span>();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+
+var scheduler = new NR.scheduler({connection: connectionDetails});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.stringQueues" id="apidoc.element.node-resque.worker.prototype.stringQueues">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>stringQueues
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringQueues = function (){
+  var self = this;
+  if(self.queues.length === 0){
+    return [&#x27;*&#x27;].join(&#x27;,&#x27;);
+  }else{
+    try{
+      return self.queues.join(&#x27;,&#x27;);
+    }catch(e){
+      return &#x27;&#x27;;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var self = this;
+  self.running = false;
+  if(self.working === true){
+    setTimeout(function(){
+      self.end(callback);
+    }, self.options.timeout);
+  }else{
+    self.untrack(self.name, self.<span class="apidocCodeKeywordSpan">stringQueues</span>(), function(error){
+      self.queueObject.end(function(error){
+        self.emit(&#x27;end&#x27;);
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      });
+    });
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.succeed" id="apidoc.element.node-resque.worker.prototype.succeed">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>succeed
+        <span class="apidocSignatureSpan">(job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">succeed = function (job, callback){
+  var self = this;
+  var jobs = [];
+
+  jobs.push(function(done){
+    self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;processed&#x27;), done);
+  });
+
+  jobs.push(function(done){
+    self.connection.redis.incr(self.connection.key(&#x27;stat&#x27;, &#x27;processed&#x27;, self.name), done);
+  });
+
+  async.series(jobs, function(error){
+    if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+    else{ self.emit(&#x27;success&#x27;, self.queue, job, self.result); }
+
+    if(typeof callback === &#x27;function&#x27;){ return callback(); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if(self.error){
+  jobs.push(function(done){
+    self.fail(self.error, done);
+  });
+}else if(toRespond){
+  jobs.push(function(done){
+    self.<span class="apidocCodeKeywordSpan">succeed</span>(job, done);
+  });
+}
+
+jobs.push(function(done){
+  self.doneWorking(done);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.track" id="apidoc.element.node-resque.worker.prototype.track">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>track
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">track = function (callback){
+  var self = this;
+  self.running = true;
+  self.connection.redis.sadd(self.connection.key(&#x27;workers&#x27;), (self.name + &#x27;:&#x27; + self.stringQueues()), function(error){
+    if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+    if(typeof callback === &#x27;function&#x27;){ callback(error); }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+};
+
+worker.prototype.init = function(callback){
+  var self = this;
+  var args;
+  var _ref;
+  self.<span class="apidocCodeKeywordSpan">track</span>(function(error){
+if(error){
+  self.emit(&#x27;error&#x27;, null, null, error);
+  if(typeof callback === &#x27;function&#x27;){ callback(error); }
+  return;
+}
+
+self.connection.redis.set(self.connection.key(&#x27;worker&#x27;, self.name, self.stringQueues(), &#x27;started&#x27;), Math.round
+((new Date()).getTime() / 1000), function(error){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.untrack" id="apidoc.element.node-resque.worker.prototype.untrack">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>untrack
+        <span class="apidocSignatureSpan">(name, queues, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">untrack = function (name, queues, callback){
+  var self = this;
+  var jobs = [];
+
+  if(self.connection &#x26;&#x26; self.connection.redis){
+    self.connection.redis.srem(self.connection.key(&#x27;workers&#x27;), (name + &#x27;:&#x27; + queues), function(error){
+      if(error){
+        self.emit(&#x27;error&#x27;, null, null, error);
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+        return;
+      }
+
+      [
+        self.connection.key(&#x27;worker&#x27;, name, self.stringQueues()),
+        self.connection.key(&#x27;worker&#x27;, name, self.stringQueues(), &#x27;started&#x27;),
+        self.connection.key(&#x27;stat&#x27;, &#x27;failed&#x27;, name),
+        self.connection.key(&#x27;stat&#x27;, &#x27;processed&#x27;, name)
+      ].forEach(function(key){
+        jobs.push(function(done){ self.connection.redis.del(key, done); });
+      });
+
+      async.series(jobs, function(error){
+        if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      });
+    });
+  }else{
+    callback();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var self = this;
+  self.running = false;
+  if(self.working === true){
+    setTimeout(function(){
+      self.end(callback);
+    }, self.options.timeout);
+  }else{
+    self.<span class="apidocCodeKeywordSpan">untrack</span>(self.name, self.stringQueues(), function(error){
+      self.queueObject.end(function(error){
+        self.emit(&#x27;end&#x27;);
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      });
+    });
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.workerCleanup" id="apidoc.element.node-resque.worker.prototype.workerCleanup">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>workerCleanup
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workerCleanup = function (callback){
+  var self = this;
+  var jobs = [];
+  self.getPids(function(error, pids){
+    if(error){
+      self.emit(&#x27;error&#x27;, null, null, error);
+      if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      return;
+    }
+
+    self.connection.redis.smembers(self.connection.key(&#x27;workers&#x27;), function(error, workers){
+      if(error){
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+        else{ self.emit(&#x27;error&#x27;, null, null, error); }
+        return;
+      }
+
+      workers.forEach(function(w){
+        var parts = w.split(&#x27;:&#x27;);
+        var host = parts[0]; var pid = parseInt(parts[1]); var queues = parseInt(parts[2]);
+        if(host === os.hostname() &#x26;&#x26; pids.indexOf(pid) &#x3c; 0){
+          jobs.push(function(done){
+            self.emit(&#x27;cleaning_worker&#x27;, w, pid);
+            var parts = w.split(&#x27;:&#x27;);
+            var queues = parts.splice(-1, 1);
+            var pureName = parts.join(&#x27;:&#x27;);
+            self.untrack(pureName, queues, done);
+          });
+        }
+      });
+
+      async.series(jobs, function(error){
+        if(error){ self.emit(&#x27;error&#x27;, null, null, error); }
+        if(typeof callback === &#x27;function&#x27;){ callback(error); }
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+////////////////////
+// START A WORKER //
+////////////////////
+
+var worker = new NR.worker({connection: connectionDetails, queues: [&#x27;math&#x27;, &#x27;otherQueue&#x27;]}, jobs);
+worker.connect(function(){
+  worker.<span class="apidocCodeKeywordSpan">workerCleanup</span>(); // optional: cleanup any previous improperly shutdown workers
+ on this host
+  worker.start();
+});
+
+///////////////////////
+// START A SCHEDULER //
+///////////////////////
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.worker.prototype.workingOn" id="apidoc.element.node-resque.worker.prototype.workingOn">
+        function <span class="apidocSignatureSpan">node-resque.worker.prototype.</span>workingOn
+        <span class="apidocSignatureSpan">(job)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workingOn = function (job){
+  var self = this;
+  self.connection.redis.set(self.connection.key(&#x27;worker&#x27;, self.name, self.stringQueues()), JSON.stringify({
+    run_at: (new Date()).toString(),
+    queue: self.queue,
+    payload: job,
+    worker: self.name,
+  }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  self.workers(function(error, workers){
+if(error){ return callback(error); }
+
+Object.keys(workers).forEach(function(w){
+  jobs.push(function(done){
+    results[w] = &#x27;started&#x27;;
+    self.<span class="apidocCodeKeywordSpan">workingOn</span>(w, workers[w], function(error, data){
+      if(error){ return done(error); }
+      if(data){
+        data = JSON.parse(data);
+        results[data.worker] = data;
+      }
+      done();
+    });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
