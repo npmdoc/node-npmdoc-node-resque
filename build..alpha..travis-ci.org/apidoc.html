@@ -114,7 +114,25 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>delayQueueLock</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>jobLock</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>multiWorker.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>noop</span>
 
         </li>
 
@@ -127,6 +145,18 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>queue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>queueLock</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-resque.</span>retry</span>
 
         </li>
 
@@ -200,6 +230,32 @@
             <a class="apidocElementLiA" href="#apidoc.element.node-resque.connection.prototype.key">
             function <span class="apidocSignatureSpan">node-resque.connection.prototype.</span>key
             <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.delayQueueLock">module node-resque.delayQueueLock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.delayQueueLock.delayQueueLock">
+            function <span class="apidocSignatureSpan">node-resque.</span>delayQueueLock
+            <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.jobLock">module node-resque.jobLock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.jobLock.jobLock">
+            function <span class="apidocSignatureSpan">node-resque.</span>jobLock
+            <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
             </a>
 
         </li>
@@ -307,6 +363,19 @@
             <a class="apidocElementLiA" href="#apidoc.element.node-resque.multiWorker.prototype.stopWait">
             function <span class="apidocSignatureSpan">node-resque.multiWorker.prototype.</span>stopWait
             <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.noop">module node-resque.noop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.noop.noop">
+            function <span class="apidocSignatureSpan">node-resque.</span>noop
+            <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
             </a>
 
         </li>
@@ -607,6 +676,32 @@
             <a class="apidocElementLiA" href="#apidoc.element.node-resque.queue.prototype.workingOn">
             function <span class="apidocSignatureSpan">node-resque.queue.prototype.</span>workingOn
             <span class="apidocSignatureSpan">(workerName, queues, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.queueLock">module node-resque.queueLock</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.queueLock.queueLock">
+            function <span class="apidocSignatureSpan">node-resque.</span>queueLock
+            <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-resque.retry">module node-resque.retry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-resque.retry.retry">
+            function <span class="apidocSignatureSpan">node-resque.</span>retry
+            <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
             </a>
 
         </li>
@@ -1235,6 +1330,16 @@ worker.connect(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -1492,6 +1597,72 @@ jobs.push(function(done){
     if(error){
       self.connected = false;
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.delayQueueLock" id="apidoc.module.node-resque.delayQueueLock">module node-resque.delayQueueLock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.delayQueueLock.delayQueueLock" id="apidoc.element.node-resque.delayQueueLock.delayQueueLock">
+        function <span class="apidocSignatureSpan">node-resque.</span>delayQueueLock
+        <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delayQueueLock = function (worker, func, queue, job, args, options){
+  var self = this;
+  self.name = &#x27;delayQueueLock&#x27;;
+  self.worker = worker;
+  self.queue = queue;
+  self.func = func;
+  self.job = job;
+  self.args = args;
+  self.options = options;
+
+  if(self.worker.queueObject){
+    self.queueObject = self.worker.queueObject;
+  }else{
+    self.queueObject = self.worker;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.jobLock" id="apidoc.module.node-resque.jobLock">module node-resque.jobLock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.jobLock.jobLock" id="apidoc.element.node-resque.jobLock.jobLock">
+        function <span class="apidocSignatureSpan">node-resque.</span>jobLock
+        <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jobLock = function (worker, func, queue, job, args, options){
+  var self = this;
+  self.name = &#x27;jobLock&#x27;;
+  self.worker = worker;
+  self.queue = queue;
+  self.func = func;
+  self.job = job;
+  self.args = args;
+  self.options = options;
+
+  if(self.worker.queueObject){
+    self.queueObject = self.worker.queueObject;
+  }else{
+    self.queueObject = self.worker;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2026,6 +2197,39 @@ multiWorker.prototype.end = function(callback){
   self.stop(callback);
 };
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.noop" id="apidoc.module.node-resque.noop">module node-resque.noop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.noop.noop" id="apidoc.element.node-resque.noop.noop">
+        function <span class="apidocSignatureSpan">node-resque.</span>noop
+        <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noop = function (worker, func, queue, job, args, options){
+  var self = this;
+  self.name = &#x27;noop&#x27;;
+  self.worker = worker;
+  self.queue = queue;
+  self.func = func;
+  self.job = job;
+  self.args = args;
+  self.options = options;
+
+  if(self.worker.queueObject){
+    self.queueObject = self.worker.queueObject;
+  }else{
+    self.queueObject = self.worker;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -3123,7 +3327,24 @@ queue.prototype.stats = function(callback){
     callback(error, timestamps);
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+////////////////////
+// PLUGIN METHODS //
+////////////////////
+
+delayQueueLock.prototype.before_enqueue = function(callback){
+  // console.log(&#x22;** before_enqueue&#x22;)
+  var self = this;
+  self.queueObject.<span class="apidocCodeKeywordSpan">scheduledAt</span>(self.queue, self.func, self.args, function(err, timestamps
+){
+    if(timestamps.length &#x3e; 0){
+      callback(null, false);
+    }else{
+      callback(null, true);
+    }
+  });
+};
+...</pre></li>
     </ul>
 
 
@@ -3285,6 +3506,77 @@ Object.keys(workers).forEach(function(w){
       done();
     });
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.queueLock" id="apidoc.module.node-resque.queueLock">module node-resque.queueLock</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.queueLock.queueLock" id="apidoc.element.node-resque.queueLock.queueLock">
+        function <span class="apidocSignatureSpan">node-resque.</span>queueLock
+        <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queueLock = function (worker, func, queue, job, args, options){
+  var self = this;
+  self.name = &#x27;queueLock&#x27;;
+  self.worker = worker;
+  self.queue = queue;
+  self.func = func;
+  self.job = job;
+  self.args = args;
+  self.options = options;
+
+  if(self.worker.queueObject){
+    self.queueObject = self.worker.queueObject;
+  }else{
+    self.queueObject = self.worker;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-resque.retry" id="apidoc.module.node-resque.retry">module node-resque.retry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-resque.retry.retry" id="apidoc.element.node-resque.retry.retry">
+        function <span class="apidocSignatureSpan">node-resque.</span>retry
+        <span class="apidocSignatureSpan">(worker, func, queue, job, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retry = function (worker, func, queue, job, args, options){
+  var self = this;
+
+  if(!options.retryLimit){ options.retryLimit = 1; }
+  if(!options.retryDelay){ options.retryDelay = (1000 * 5); }
+  if(!options.backoffStrategy){ options.backoffStrategy = null; }
+
+  self.name = &#x27;retry&#x27;;
+  self.worker = worker;
+  self.queue = queue;
+  self.func = func;
+  self.job = job;
+  self.args = args;
+  self.options = options;
+
+  if(self.worker.queueObject){
+    self.queueObject = self.worker.queueObject;
+  }else{
+    self.queueObject = self.worker;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
